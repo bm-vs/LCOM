@@ -17,32 +17,77 @@ static unsigned scr_lines;	/* Height of screen in lines */
 
 void vt_fill(char ch, char attr) {
   
-  /* To complete */
+	char *vptr;
+	vptr = video_mem;
+
+	int i;
+
+	for (i = 0; i < scr_width * scr_lines; i++) {
+		*vptr = ch;
+		vptr++;
+		*vptr = attr;
+		vptr++;
+	}
   
 }
 
 void vt_blank() {
 
-  /* To complete ... */
+	char *vptr;
+	vptr = video_mem;
+
+	int i;
+
+	for (i = 0; i < scr_width * scr_lines; i++) {
+		*vptr = ' ';
+		vptr++;
+		*vptr = 0x007;
+		vptr++;
+	}
 
 }
 
 int vt_print_char(char ch, char attr, int r, int c) {
-  
-  /* To complete ... */
+ /*
+	char *vptr;
+	vptr = video_mem;
 
+	vptr = vptr + 2*(scr_width*r + c);
+
+	*vptr = ch;
+	vptr++;
+	*vptr = attr;
+*/
 }
 
 int vt_print_string(char *str, char attr, int r, int c) {
+/*
+	char *vptr;
+	vptr = video_mem;
 
-  /* To complete ... */
+	vptr = vptr + 2*(scr_width*r + c);
 
+	while (*str != NULL) {
+		*vptr = *str;
+		vptr++;
+		*vptr = attr;
+		vptr++;
+		str++;
+	}
+*/
 }
 
 int vt_print_int(int num, char attr, int r, int c) {
+/*
+	char *vptr;
+	vptr = video_mem;
 
-  /* To complete ... */
+	vptr = vptr + 2*(scr_width*r + c);
 
+	*vptr = 48 + num;
+	vptr++;
+	*vptr = attr;
+*/
 }
 
 
