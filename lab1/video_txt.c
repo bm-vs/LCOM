@@ -80,7 +80,7 @@ int vt_print_string(char *str, char attr, int r, int c) {
 }
 
 int vt_print_int(int num, char attr, int r, int c) {
-/*
+
 	char *vptr;
 	vptr = video_mem;
 
@@ -89,7 +89,7 @@ int vt_print_int(int num, char attr, int r, int c) {
 	*vptr = 48 + num;
 	vptr++;
 	*vptr = attr;
-*/
+
 }
 
 
