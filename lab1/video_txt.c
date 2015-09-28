@@ -63,20 +63,20 @@ int vt_print_char(char ch, char attr, int r, int c) {
 }
 
 int vt_print_string(char *str, char attr, int r, int c) {
-/*
+
 	char *vptr;
 	vptr = video_mem;
 
 	vptr = vptr + 2*(scr_width*r + c);
 
-	while (*str != NULL) {
+	while (*str != '\0') {
 		*vptr = *str;
 		vptr++;
 		*vptr = attr;
 		vptr++;
 		str++;
 	}
-*/
+
 }
 
 int vt_print_int(int num, char attr, int r, int c) {
