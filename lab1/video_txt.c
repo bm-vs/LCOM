@@ -48,16 +48,18 @@ void vt_blank() {
 }
 
 int vt_print_char(char ch, char attr, int r, int c) {
- /*
+
 	char *vptr;
 	vptr = video_mem;
 
-	vptr = vptr + 2*(scr_width*r + c);
+	vptr += 2*(scr_width*r + c);
 
 	*vptr = ch;
 	vptr++;
 	*vptr = attr;
-*/
+
+	return 0;
+
 }
 
 int vt_print_string(char *str, char attr, int r, int c) {
