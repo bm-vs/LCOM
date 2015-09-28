@@ -67,7 +67,7 @@ int vt_print_string(char *str, char attr, int r, int c) {
 	char *vptr;
 	vptr = video_mem;
 
-	vptr = vptr + 2*(scr_width*r + c);
+	vptr +=  2*(scr_width*r + c);
 
 	while (*str != '\0') {
 		*vptr = *str;
@@ -76,6 +76,7 @@ int vt_print_string(char *str, char attr, int r, int c) {
 		vptr++;
 		str++;
 	}
+	return 0;
 
 }
 
@@ -84,11 +85,13 @@ int vt_print_int(int num, char attr, int r, int c) {
 	char *vptr;
 	vptr = video_mem;
 
-	vptr = vptr + 2*(scr_width*r + c);
+	vptr +=  2*(scr_width*r + c);
 
 	*vptr = 48 + num;
 	vptr++;
 	*vptr = attr;
+
+	return 0;
 
 }
 
@@ -96,9 +99,10 @@ int vt_print_int(int num, char attr, int r, int c) {
 int vt_draw_frame(int width, int height, char attr, int r, int c) {
 
   char *vptr;
-  vptr = video_mem;
+  char *tmp;
 
-  vptr = vptr + 2*(scr_width*r + c);
+  vptr = video_mem;
+  vptr += 2*(scr_width*r + c);
 
   tmp = vptr;
 
@@ -111,20 +115,38 @@ int vt_draw_frame(int width, int height, char attr, int r, int c) {
 	  vptr++;
   }
 
-  vptr = tmp + 2*scr_width;
-
   for (i = 1; i < height - 1; i++) {
+
+	  vptr = tmp + 2*(scr_width*i);
+
 	  *vptr = ' ';
 	  vptr++;
 	  *vptr = attr;
+	  vptr++;
 
-	  vptr += width;
+
+	  if(width % 2 == 0){
+		  vptr += 2*(width-1);
+	  }
+	  if(width % 2 != 0){
+		  vptr += 2*(width -2);
+	  }
+
 	  *vptr = ' ';
 	  vptr++;
 	  *vptr = attr;
   }
 
+  vptr += 2*(scr_width - width+1)-1;
 
+  for (i = 0; i < width; i++) {
+  	  *vptr = ' ';
+  	  vptr++;
+  	  *vptr = attr;
+  	  vptr++;
+    }
+
+  return 0;
 
 }
 
