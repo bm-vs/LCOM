@@ -94,11 +94,13 @@ int vt_print_int(int num, char attr, int r, int c) {
 
 
 int vt_draw_frame(int width, int height, char attr, int r, int c) {
-/*
+
   char *vptr;
   vptr = video_mem;
 
   vptr = vptr + 2*(scr_width*r + c);
+
+  tmp = vptr;
 
   int i;
 
@@ -108,7 +110,22 @@ int vt_draw_frame(int width, int height, char attr, int r, int c) {
 	  *vptr = attr;
 	  vptr++;
   }
-*/
+
+  vptr = tmp + 2*scr_width;
+
+  for (i = 1; i < height - 1; i++) {
+	  *vptr = ' ';
+	  vptr++;
+	  *vptr = attr;
+
+	  vptr += width;
+	  *vptr = ' ';
+	  vptr++;
+	  *vptr = attr;
+  }
+
+
+
 }
 
 /*
