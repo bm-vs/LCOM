@@ -53,6 +53,16 @@
 #define TIMER_RB_STATUS_        BIT(4)
 #define TIMER_RB_SEL(n)         BIT((n)+1)
 
+/* BITS */
+
+#define BIT_7 					BIT(7)
+#define BIT_6					BIT(6)
+#define BIT_5 					BIT(5)
+#define BIT_4 					BIT(4)
+#define BIT_3 					BIT(3)
+#define BIT_2 					BIT(2)
+#define BIT_1 					BIT(1)
+#define BIT_0 					BIT(0)
 
 /**@}*/
 
