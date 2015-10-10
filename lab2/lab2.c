@@ -27,6 +27,8 @@ int main(int argc, char **argv) {
 }
 
 static void print_usage(char *argv[]) {
+  printf("LCOM 15/16 *TIMERS*\n");
+  printf("Antonio Melo & Bruno Santos\n");
   printf("Usage: one of the following:\n"
 	 "\t service run %s -args \"square <unsigned long freq>\" \n"
 	 "\t service run %s -args \"int <unsigned long time>\" \n"
@@ -38,12 +40,12 @@ static int proc_args(int argc, char *argv[]) {
 	unsigned long timer;
 
   /* check the function to test: if the first characters match, accept it */
-  if (strncmp(argv[1], "test_config", strlen("test_config")) == 0) {
+  if (strncmp(argv[1], "config", strlen("config")) == 0) {
 	  if( argc != 3) {
 		  printf("timer_test_config: wrong no of arguments for test of test_config() \n");
 		  return 1;
 	  }	  
-	  printf("timer_test_config()\n"); /* Actually, it was already invoked */
+	  printf("\n\ntimer_test_config()\n"); /* Actually, it was already invoked */
 	  timer = atol(argv[2]);
 
 	  timer_test_config(timer);

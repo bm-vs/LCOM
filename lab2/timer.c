@@ -37,7 +37,7 @@ int timer_get_conf(unsigned long timer, unsigned char *st) {
 }
 
 int timer_display_conf(unsigned char conf) {
-	printf("Output pin state: ");
+	printf("   Output pin state: ");
 	if (conf & BIT_7 == BIT_7) {
 		printf("1\n");
 	}
@@ -45,7 +45,7 @@ int timer_display_conf(unsigned char conf) {
 		printf("0\n");
 	}
 
-	printf("Null count flags: ");
+	printf("   Null count flags: ");
 	if (conf & BIT_6 == BIT_6) {
 		printf("1\n");
 	}
@@ -53,21 +53,21 @@ int timer_display_conf(unsigned char conf) {
 		printf("0\n");
 	}
 
-	printf("Acess mode: ");
+	printf("   Acess mode: ");
 	if (conf & BIT_5 == BIT_5) {
 		if (conf & BIT_4 == BIT_4)
-			printf("1 1 - Acess mode: lobyte/hibyte\n");
+			printf("1 1 - lobyte/hibyte\n");
 		else
-			printf("1 0 - Acess mode: hibyte only\n");
+			printf("1 0 - hibyte only\n");
 	}
 	else{
 		if (conf & BIT_4 == BIT_4)
-			printf("0 1 - Acess mode: lobyte only\n");
+			printf("0 1 - lobyte only\n");
 		else
 			printf("0 0 - Latch count value command\n");
 	}
 
-	printf("Operanting mode: ");
+	printf("   Operanting mode: ");
 	if (conf & BIT_3 == BIT_3) {
 		if (conf & BIT_2 == BIT_2) {
 			if (conf & BIT_1 == BIT_1) {
@@ -105,7 +105,7 @@ int timer_display_conf(unsigned char conf) {
 		}
 	}
 
-	printf("BCD/Binary mode: ");
+	printf("   BCD/Binary mode: ");
 	if (conf & BIT_0 == BIT_0){
 		printf("16-bit binary\n");
 	}
