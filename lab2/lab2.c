@@ -1,4 +1,5 @@
 #include <minix/drivers.h>
+#include <stdlib.h>
 #include "i8254.h"
 
 
@@ -30,23 +31,22 @@ static void print_usage(char *argv[]) {
 	 "\t service run %s -args \"square <unsigned long freq>\" \n"
 	 "\t service run %s -args \"int <unsigned long time>\" \n"
      "\t service run %s -args \"config <unsigned long timer>\" \n",
-	 argv[0], argv[0], argv[0], argv[0], argv[0], argv[0]);
+	 argv[0], argv[0], argv[0]);
 }
 
 static int proc_args(int argc, char *argv[]) {
 	unsigned long timer;
-	unsigned char *st;
 
   /* check the function to test: if the first characters match, accept it */
-  if (strncmp(argv[1], "config", strlen("config")) == 0) {
-	  if( argc != 4 ) {
-		  printf("timer_get_conf: wrong no of arguments for test of config() \n");
+  if (strncmp(argv[1], "test_config", strlen("test_config")) == 0) {
+	  if( argc != 3) {
+		  printf("timer_test_config: wrong no of arguments for test of test_config() \n");
 		  return 1;
 	  }	  
-	  printf("timer_get_conf()\n"); /* Actually, it was already invoked */
-	  timer=argv[2];
-	  *st=argv[3];
-	  timer_get_conf(timer,st);
+	  printf("timer_test_config()\n"); /* Actually, it was already invoked */
+	  timer = atol(argv[2]);
+
+	  timer_test_config(timer);
 	  return 0;
   }/* else if (strncmp(argv[1], "", strlen("fill")) == 0) {
 	  if( argc != 4 ) {
