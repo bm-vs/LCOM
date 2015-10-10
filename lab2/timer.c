@@ -34,7 +34,7 @@ int timer_get_conf(unsigned long timer, unsigned char *st) {
 }
 
 int timer_display_conf(unsigned char conf) {
-	printf("Output pin state: ")
+	printf("Output pin state: ");
 	if (conf & BIT_7 == BIT_7) {
 		printf("1");
 	}
@@ -42,7 +42,7 @@ int timer_display_conf(unsigned char conf) {
 		printf("0");
 	}
 
-	printf("Null count flags: ")
+	printf("Null count flags: ");
 	if (conf & BIT_6 == BIT_6) {
 		printf("1");
 	}
@@ -102,7 +102,7 @@ int timer_display_conf(unsigned char conf) {
 		}
 	}
 
-	printf("BCD/Binary mode: ")
+	printf("BCD/Binary mode: ");
 	if (conf & BIT_0 == BIT_0){
 		printf("16-bit binary");
 	}
@@ -127,6 +127,6 @@ int timer_test_int(unsigned long time) {
 int timer_test_config(unsigned long timer) {
 	unsigned char conf;
 	timer_get_conf(timer,&conf);
-	timer_display_conf();
+	timer_display_conf(conf);
 	return 1;
 }
