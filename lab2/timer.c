@@ -1,6 +1,7 @@
 #include <minix/syslib.h>
 #include <minix/drivers.h>
 #include <stdlib.h>
+#include <math.h>
 #include "i8254.h"
 
 int timer_set_square(unsigned long timer, unsigned long freq) {
@@ -37,8 +38,22 @@ int timer_get_conf(unsigned long timer, unsigned char *st) {
 }
 
 int timer_display_conf(unsigned char conf) {
+	printf("\n");
+
+	int i;
+	for (i = 0; i < 8; i++) {
+		if (conf & BIT(7-i)) {
+			printf("1");
+		}
+		else {
+			printf("0");
+		}
+	}
+
+	printf("\n\n");
+
 	printf("   Output pin state: ");
-	if (conf & BIT_7 == BIT_7) {
+	if ((conf & BIT_7) == BIT_7) {
 		printf("1\n");
 	}
 	else {
@@ -46,7 +61,7 @@ int timer_display_conf(unsigned char conf) {
 	}
 
 	printf("   Null count flags: ");
-	if (conf & BIT_6 == BIT_6) {
+	if ((conf & BIT_6) == BIT_6) {
 		printf("1\n");
 	}
 	else {
@@ -54,67 +69,67 @@ int timer_display_conf(unsigned char conf) {
 	}
 
 	printf("   Acess mode: ");
-	if (conf & BIT_5 == BIT_5) {
-		if (conf & BIT_4 == BIT_4)
-			printf("1 1 - lobyte/hibyte\n");
+	if ((conf & BIT_5) == BIT_5) {
+		if ((conf & BIT_4) == BIT_4)
+			printf("1 1 - LSB followed by MSB\n");
 		else
-			printf("1 0 - hibyte only\n");
+			printf("1 0 - MSB\n");
 	}
 	else{
-		if (conf & BIT_4 == BIT_4)
-			printf("0 1 - lobyte only\n");
+		if ((conf & BIT_4) == BIT_4)
+			printf("0 1 - LSB\n");
 		else
 			printf("0 0 - Latch count value command\n");
 	}
 
 	printf("   Operanting mode: ");
-	if (conf & BIT_3 == BIT_3) {
-		if (conf & BIT_2 == BIT_2) {
-			if (conf & BIT_1 == BIT_1) {
-				printf("Mode 3: square wave generator\n");
+	if ((conf & BIT_3) == BIT_3) {
+		if ((conf & BIT_2) == BIT_2) {
+			if ((conf & BIT_1) == BIT_1) {
+				printf("Mode 3 - square wave generator\n");
 			}
 			else {
-				printf("Mode 2: rate generator\n");
+				printf("Mode 2 - rate generator\n");
 			}
 		}
 		else {
-			if (conf & BIT_1 == BIT_1) {
-				printf("Mode 5: hardware triggered strobe\n");
+			if ((conf & BIT_1) == BIT_1) {
+				printf("Mode 5 - hardware triggered strobe\n");
 			}
 			else {
-				printf("Mode 4: software triggered strobe\n");
+				printf("Mode 4 - software triggered strobe\n");
 			}
 		}
 	}
 	else {
-		if (conf & BIT_2 == BIT_2) {
-			if (conf & BIT_1 == BIT_1) {
-				printf("Mode 3: square wave generator\n");
+		if ((conf & BIT_2) == BIT_2) {
+			if ((conf & BIT_1) == BIT_1) {
+				printf("Mode 3 - square wave generator\n");
 			}
 			else {
-				printf("Mode 2: rate generator\n");
+				printf("Mode 2 - rate generator\n");
 			}
 		}
 		else {
-			if (conf & BIT_1 == BIT_1) {
-				printf("Mode 1: hardware re-triggered one-shot\n");
+			if ((conf & BIT_1) == BIT_1) {
+				printf("Mode 1 - hardware re-triggered one-shot\n");
 			}
 			else {
-				printf("Mode 0: interrupt on terminal count\n");
+				printf("Mode 0 - interrupt on terminal count\n");
 			}
 		}
 	}
 
 	printf("   BCD/Binary mode: ");
-	if (conf & BIT_0 == BIT_0){
-		printf("16-bit binary\n");
-	}
-	else {
+	if ((conf & BIT_0) == BIT_0){
 		printf("four-digit BCD\n");
 	}
+	else {
+		printf("16-bit binary\n");
+	}
 
 
-	return 1;
+	return 0;
 }
 
 int timer_test_square(unsigned long freq) {

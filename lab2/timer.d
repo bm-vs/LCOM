@@ -7,6 +7,7 @@ timer.o:	/usr/include/machine/interrupt.h
 timer.o:	/usr/include/machine/mcontext.h
 timer.o:	/usr/include/machine/ports.h
 timer.o:	/usr/include/machine/stackframe.h
+timer.o:	/usr/include/mathconst.h
 timer.o:	/usr/include/minix/bitmap.h
 timer.o:	/usr/include/minix/callnr.h
 timer.o:	/usr/include/minix/com.h
@@ -40,6 +41,7 @@ timer.o:	/usr/include/sys/ucred.h
 timer.o:	/usr/include/timers.h
 timer.o:	/usr/pkg/gcc44/lib/gcc/i686-pc-minix/4.4.3/include-fixed/ansi.h
 timer.o:	/usr/pkg/gcc44/lib/gcc/i686-pc-minix/4.4.3/include-fixed/limits.h
+timer.o:	/usr/pkg/gcc44/lib/gcc/i686-pc-minix/4.4.3/include-fixed/math.h
 timer.o:	/usr/pkg/gcc44/lib/gcc/i686-pc-minix/4.4.3/include-fixed/signal.h
 timer.o:	/usr/pkg/gcc44/lib/gcc/i686-pc-minix/4.4.3/include-fixed/stddef.h
 timer.o:	/usr/pkg/gcc44/lib/gcc/i686-pc-minix/4.4.3/include-fixed/stdio.h
