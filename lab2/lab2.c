@@ -19,7 +19,9 @@ int main(int argc, char **argv) {
   if ( argc == 1 ) {
       print_usage(argv);
       return 0;
-  } else {   
+  } else {
+	  printf("\nLCOM TIMERS 2015/2016\n");
+	  printf("Antonio Melo & Bruno Santos\n");
       proc_args(argc, argv);
   }
   return 0;
@@ -27,7 +29,7 @@ int main(int argc, char **argv) {
 }
 
 static void print_usage(char *argv[]) {
-  printf("Usage: one of the following:\n"
+  printf("\nUsage: one of the following:\n"
 	 "\t service run %s -args \"square <unsigned long freq>\" \n"
 	 "\t service run %s -args \"int <unsigned long time>\" \n"
      "\t service run %s -args \"config <unsigned long timer>\" \n",
