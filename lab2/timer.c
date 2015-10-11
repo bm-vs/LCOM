@@ -5,8 +5,30 @@
 #include "i8254.h"
 
 int timer_set_square(unsigned long timer, unsigned long freq) {
+	unsigned char cmd;
+	unsigned long new_freq = TIMER_FREQ/freq;
+	unsigned char lsb = new_freq;
+	unsigned char msb = new_freq >> 8;
 
-	return 1;
+	switch(timer) {
+	case 0:
+		cmd = TIMER_SEL0;
+		break;
+	case 1:
+		cmd = TIMER_SEL1;
+		break;
+	case 2:
+		cmd = TIMER_SEL2;
+		break;
+	}
+
+	cmd = cmd | TIMER_LSB_MSB | TIMER_SQR_WAVE | TIMER_BIN;
+
+	sys_outb(TIMER_CTRL, cmd);
+	sys_outb(TIMER_0 + timer, lsb);
+	sys_outb(TIMER_0 + timer, msb);
+
+	return 0;
 }
 
 int timer_subscribe_int(void ) {
@@ -134,7 +156,9 @@ int timer_display_conf(unsigned char conf) {
 
 int timer_test_square(unsigned long freq) {
 	
-	return 1;
+	timer_set_square(0, freq);
+
+	return 0;
 }
 
 int timer_test_int(unsigned long time) {
