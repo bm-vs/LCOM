@@ -19,9 +19,7 @@ int main(int argc, char **argv) {
   if ( argc == 1 ) {
       print_usage(argv);
       return 0;
-  } else {
-	  printf("\nLCOM TIMERS 2015/2016\n");
-	  printf("Antonio Melo & Bruno Santos\n");
+  } else {   
       proc_args(argc, argv);
   }
   return 0;
@@ -29,7 +27,7 @@ int main(int argc, char **argv) {
 }
 
 static void print_usage(char *argv[]) {
-  printf("\nUsage: one of the following:\n"
+  printf("Usage: one of the following:\n"
 	 "\t service run %s -args \"square <unsigned long freq>\" \n"
 	 "\t service run %s -args \"int <unsigned long time>\" \n"
      "\t service run %s -args \"config <unsigned long timer>\" \n",
@@ -39,6 +37,7 @@ static void print_usage(char *argv[]) {
 static int proc_args(int argc, char *argv[]) {
 	unsigned long timer;
 	unsigned long freq;
+	unsigned long time;
 
   /* check the function to test: if the first characters match, accept it */
 	if (strncmp(argv[1], "config", strlen("config")) == 0) {
@@ -63,6 +62,17 @@ static int proc_args(int argc, char *argv[]) {
 
 		timer_test_square(freq);
 	}
+	else if (strncmp(argv[1], "int", strlen("int")) == 0) {
+			if (argc != 3) {
+				printf("timer_test_int: wrong no of arguments for test of timer_test_int() \n");
+				return 1;
+			}
+
+			printf("\ntimer_test_int()\n");
+			time = atol(argv[2]);
+
+			timer_test_int(time);
+		}
  }
 
 static unsigned long parse_ulong(char *str, int base) {

@@ -4,45 +4,70 @@
 #include <math.h>
 #include "i8254.h"
 
+int counter = 0;
+int timer_irq = 0;
+int timer_hook_bit = 0;
+int hook_id = 0;
+
 int timer_set_square(unsigned long timer, unsigned long freq) {
 	unsigned char cmd;
 	unsigned long new_freq = TIMER_FREQ/freq;
 	unsigned char lsb = new_freq;
 	unsigned char msb = new_freq >> 8;
 
+	if (timer_get_conf(timer, &cmd) != 0) {
+		return 1;
+	}
+
 	switch(timer) {
 	case 0:
-		cmd = TIMER_SEL0;
+		cmd |= TIMER_SEL0;
 		break;
 	case 1:
-		cmd = TIMER_SEL1;
+		cmd |= TIMER_SEL1;
 		break;
 	case 2:
-		cmd = TIMER_SEL2;
+		cmd |= TIMER_SEL2;
 		break;
 	}
 
-	cmd = cmd | TIMER_LSB_MSB | TIMER_SQR_WAVE | TIMER_BIN;
 
-	sys_outb(TIMER_CTRL, cmd);
-	sys_outb(TIMER_0 + timer, lsb);
-	sys_outb(TIMER_0 + timer, msb);
+	cmd = cmd | TIMER_LSB_MSB | TIMER_SQR_WAVE;
 
-	return 0;
-}
-
-int timer_subscribe_int(void ) {
+	if (sys_outb(TIMER_CTRL, cmd) == OK) {
+		if (sys_outb(TIMER_0 + timer, lsb) == OK) {
+			if (sys_outb(TIMER_0 + timer, msb) == OK) {
+				return 0;
+			}
+		}
+	}
 
 	return 1;
 }
 
+int timer_subscribe_int() {
+	hook_id = timer_hook_bit;
+
+	if(sys_irqsetpolicy(timer_irq, IRQ_REENABLE , &hook_id) == OK) {
+		if (sys_irqenable(&hook_id) == OK) {
+			return timer_hook_bit;
+		}
+	}
+
+	return -1;
+}
+
 int timer_unsubscribe_int() {
+
+	if (sys_irqrmpolicy(&hook_id) == OK) {
+		return 0;
+	}
 
 	return 1;
 }
 
 void timer_int_handler() {
-
+	counter++;
 }
 
 int timer_get_conf(unsigned long timer, unsigned char *st) {
@@ -51,12 +76,15 @@ int timer_get_conf(unsigned long timer, unsigned char *st) {
 
 	rb = TIMER_RB_CMD | TIMER_RB_COUNT_ | TIMER_RB_STATUS_ | TIMER_RB_SEL(timer);
 
-	sys_outb(TIMER_CTRL,rb);
-	sys_inb(TIMER_0 + timer, &timer_info);
+	if (sys_outb(TIMER_CTRL,rb) == OK) {
+		if (sys_inb(TIMER_0 + timer, &timer_info) == OK) {
+			*st = timer_info;
 
-	*st = timer_info;
+			return 0;
+		}
+	}
 
-	return 0;
+	return 1;
 }
 
 int timer_display_conf(unsigned char conf) {
@@ -155,21 +183,83 @@ int timer_display_conf(unsigned char conf) {
 }
 
 int timer_test_square(unsigned long freq) {
+	if (freq == 0) {
+		printf("Invalid frequency\n");
+		return 2;
+	}
 	
-	timer_set_square(0, freq);
+	if (timer_set_square(0, freq) == 0) {
+		return 0;
+	}
 
-	return 0;
+	return 1;
 }
 
 int timer_test_int(unsigned long time) {
+	int ipc_status, r;
+	message msg;
+
+	if (timer_set_square(0, 60) != 0) {
+		return 1;
+	}
+
+	if (timer_subscribe_int() != 0) {
+		return 1;
+	}
+
+	printf("\n");
+
+	while(counter <= time*TIMER_DEFAULT_FREQ) {
+		if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) {
+			printf("driver_receive failed with: %d", r);
+			continue;
+	    }
+
+		if (is_ipc_notify(ipc_status)) {
+			switch (_ENDPOINT_P(msg.m_source)) {
+			case HARDWARE:
+	                if (msg.NOTIFY_ARG & BIT(timer_hook_bit)) {
+	                	timer_int_handler();
+
+	                	if (counter % TIMER_DEFAULT_FREQ == 0) {
+	                		if (counter == SECOND) {
+	                			printf("1 second\n");
+	                		}
+	                		else {
+	                			printf("%d seconds\n", counter/SECOND);
+	                		}
+	                	}
+	                }
+	                break;
+	            default:
+	                break;
+	        }
+	    } else {
+	    	continue;
+	    }
+	 }
+
+	if (timer_unsubscribe_int() != 0) {
+		return 1;
+	}
 	
-	return 1;
+	return 0;
 }
 
 int timer_test_config(unsigned long timer) {
 	unsigned char conf;
 
-	timer_get_conf(timer,&conf);
-	timer_display_conf(conf);
+	if (timer > 2 || timer < 0) {
+		printf("Invalid timer\n");
+		return 2;
+	}
+
+
+	if (timer_get_conf(timer,&conf) == 0) {
+		timer_display_conf(conf);
+
+		return 0;
+	}
+
 	return 1;
 }
