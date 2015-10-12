@@ -73,46 +73,4 @@ static int proc_args(int argc, char *argv[]) {
 
 			timer_test_int(time);
 		}
- }
-
-static unsigned long parse_ulong(char *str, int base) {
-  char *endptr;
-  unsigned long val;
-
-  val = strtoul(str, &endptr, base);
-
-  if ((errno == ERANGE && val == ULONG_MAX )
-	  || (errno != 0 && val == 0)) {
-	  perror("strtol");
-	  return ULONG_MAX;
-  }
-
-  if (endptr == str) {
-	  printf("video_txt: parse_ulong: no digits were found in %s \n", str);
-	  return ULONG_MAX;
-  }
-
-  /* Successful conversion */
-  return val;
-}
-
-static long parse_long(char *str, int base) {
-  char *endptr;
-  unsigned long val;
-
-  val = strtol(str, &endptr, base);
-
-  if ((errno == ERANGE && (val == LONG_MAX || val == LONG_MIN))
-	  || (errno != 0 && val == 0)) {
-	  perror("strtol");
-	  return LONG_MAX;
-  }
-
-  if (endptr == str) {
-	  printf("video_txt: parse_long: no digits were found in %s \n", str);
-	  return LONG_MAX;
-  }
-
-  /* Successful conversion */
-  return val;
 }
