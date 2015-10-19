@@ -55,7 +55,7 @@ static int proc_args(int argc, char *argv[]) {
 
 		printf("\nkbd_test_leds()\n");
 		n = atoi(argv[2]);
-		leds = argv[3];
+		*leds = atoi(argv[3]);
 
 		kbd_test_leds(n, leds);
 	}
