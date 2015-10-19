@@ -1,5 +1,6 @@
 #include <minix/syslib.h>
 #include <minix/drivers.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 #include "i8254.h"
@@ -38,7 +39,7 @@ int kbd_int_handler() {
 		return 1;
 	}
 
-	if (stat >> 8 == 1) {
+	if (stat & BIT(7) == BIT(7)) {
 		printf("Break code: 0x%02x\n", stat);
 	}
 	else {

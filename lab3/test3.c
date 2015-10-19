@@ -27,7 +27,8 @@ int kbd_test_scan(unsigned short ass) {
 				case HARDWARE:
 		                if (msg.NOTIFY_ARG & BIT(KBD_HOOK_BIT)) {
 		                	if (kbd_int_handler() == 1) {
-		                		break;
+		                		delay(20000);
+		                		return 0;
 		                	}
 		                }
 		                break;
