@@ -9,6 +9,8 @@
 #define	KBC_CMD_REG		0x64
 #define OUT_BUFF		0x60
 
+#define BREAKCODE		0x80
+
 #define ESC		0x81
 
 

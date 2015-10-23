@@ -39,8 +39,8 @@ int kbd_int_handler() {
 		return 1;
 	}
 
-	if (stat & BIT(7) == BIT(7)) {
-		printf("Break code: 0x%02x\n", stat);
+	if ((stat & BREAKCODE) == BREAKCODE) {
+		printf("Break code: 0x%02x\n\n", stat);
 	}
 	else {
 		printf("Make code: 0x%02x\n", stat);
