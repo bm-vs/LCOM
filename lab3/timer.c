@@ -198,6 +198,7 @@ int timer_test_square(unsigned long freq) {
 int timer_test_int(unsigned long time) {
 	int ipc_status, r;
 	message msg;
+	counter = 0;
 
 	if (timer_set_square(0, 60) != 0) {
 		return 1;
@@ -220,15 +221,6 @@ int timer_test_int(unsigned long time) {
 			case HARDWARE:
 	                if (msg.NOTIFY_ARG & BIT(timer_hook_bit)) {
 	                	timer_int_handler();
-
-	                	if (counter % TIMER_DEFAULT_FREQ == 0) {
-	                		if (counter == SECOND) {
-	                			printf("1 second\n");
-	                		}
-	                		else {
-	                			printf("%d seconds\n", counter/SECOND);
-	                		}
-	                	}
 	                }
 	                break;
 	            default:

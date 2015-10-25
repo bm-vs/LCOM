@@ -48,14 +48,19 @@ static int proc_args(int argc, char *argv[]) {
 		kbd_test_scan(ass);
 	}
 	else if (strncmp(argv[1], "leds", strlen("leds")) == 0) {
-		if (argc != 3) {
+		if (argc < 4) {
 			printf("kbd_test_leds: wrong no of arguments for test of kbd_test_leds() \n");
 			return 1;
 		}
 
 		printf("\nkbd_test_leds()\n");
 		n = atoi(argv[2]);
-		*leds = atoi(argv[3]);
+		leds = malloc(n * sizeof(char));
+
+		int i;
+		for (i = 0; i < n; i++) {
+			leds[i]=atoi(argv[3 + i]);
+		}
 
 		kbd_test_leds(n, leds);
 	}
