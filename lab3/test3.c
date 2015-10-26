@@ -8,41 +8,57 @@
 #include "kbd.h"
 
 int kbd_test_scan(unsigned short ass) {
-	if (ass == 0) {
 
-		if (kbd_subscribe_int() != 1) {
-			return 1;
+	if (kbd_subscribe_int() != 1) {
+		return 1;
+	}
+
+	int r, ipc_status, scan_result;
+	message msg;
+
+	while (1) {
+		if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
+			printf("driver_receive failed with: %d", r);
+			continue;
 		}
 
-		int r, ipc_status, scan_result;
-		message msg;
-
-		while (1) {
-			if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
-				printf("driver_receive failed with: %d", r);
-				continue;
-			}
-
-			if (is_ipc_notify(ipc_status)) {
-				switch (_ENDPOINT_P(msg.m_source)) {
-				case HARDWARE:
-					if (msg.NOTIFY_ARG & BIT(KBD_HOOK_BIT)) {
+		if (is_ipc_notify(ipc_status)) {
+			switch (_ENDPOINT_P(msg.m_source)) {
+			case HARDWARE:
+				if (msg.NOTIFY_ARG & BIT(KBD_HOOK_BIT)) {
+					if (ass == 0) {
 						if (kbd_int_handler() == 1) {
 							kbd_unsubscribe_int();
 							return 0;
 						}
-					}
-					break;
-				default:
-					break;
-				}
-			} else {
-				continue;
-			}
-		}
+					} else if (ass == 1) {
+						sef_startup();
+						sys_enable_iop(SELF);
 
-		kbd_unsubscribe_int();
+						unsigned long stat = asm_handler();
+
+						if ((stat & BREAKCODE) == BREAKCODE) {
+							printf("Break code: 0x%02x\n\n", stat);
+						} else {
+							printf("Make code: 0x%02x\n", stat);
+						}
+
+						if (stat == ESC) {
+							return 0;
+						}
+
+					}
+				}
+				break;
+			default:
+				break;
+			}
+		} else {
+			continue;
+		}
 	}
+
+	kbd_unsubscribe_int();
 
 	return 1;
 }
