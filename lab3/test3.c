@@ -10,7 +10,7 @@
 int kbd_test_scan(unsigned short ass) {
 	if (ass == 0) {
 
-		if (kbd_subscribe_int() != 0) {
+		if (kbd_subscribe_int() != 1) {
 			return 1;
 		}
 
@@ -43,7 +43,10 @@ int kbd_test_scan(unsigned short ass) {
 
 		kbd_unsubscribe_int();
 	}
+
+	return 1;
 }
+
 int kbd_test_leds(unsigned short n, unsigned short *leds) {
 
 	message msg;
@@ -55,7 +58,6 @@ int kbd_test_leds(unsigned short n, unsigned short *leds) {
 	if (timer_subscribe_int() != 0) {
 		return 1;
 	}
-
 	if (timer_set_square(0, 60) != 0) {
 		return 1;
 	}
@@ -104,5 +106,48 @@ int kbd_test_leds(unsigned short n, unsigned short *leds) {
 }
 
 int kbd_test_timed_scan(unsigned short n) {
-	/* To be completed */
+	if (kbd_subscribe_int() != 1) {
+		return 1;
+	}
+	if (timer_subscribe_int() != 0) {
+		return 1;
+	}
+
+	int r, ipc_status, scan_result;
+	unsigned char timer_hook_bit = 0;
+	message msg;
+	int counter = 0;
+
+	while (counter < n * TIMER_DEFAULT_FREQ) {
+		if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
+			printf("driver_receive failed with: %d", r);
+			continue;
+		}
+
+		if (is_ipc_notify(ipc_status)) {
+			switch (_ENDPOINT_P(msg.m_source)) {
+			case HARDWARE:
+				if (msg.NOTIFY_ARG & BIT(KBD_HOOK_BIT)) {
+					counter = 0;
+					if (kbd_int_handler() == 1) {
+						kbd_unsubscribe_int();
+						return 0;
+					}
+				}
+				if (msg.NOTIFY_ARG & BIT(timer_hook_bit)) {
+					counter++;
+				}
+
+				break;
+			default:
+				break;
+			}
+		}
+
+	}
+
+	kbd_unsubscribe_int();
+	timer_unsubscribe_int();
+
+	return 0;
 }

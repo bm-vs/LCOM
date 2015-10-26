@@ -4,7 +4,7 @@
 #define BIT(n) (0x01<<(n))
 
 #define KBD_IRQ			1
-#define KBD_HOOK_BIT	0
+#define KBD_HOOK_BIT	1
 
 #define STAT_REG		0x64
 #define OUT_BUFF		0x60
