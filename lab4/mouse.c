@@ -48,15 +48,6 @@ int mouse_set_stream_mode() {
 			}
 		}
 
-		while(1) {
-			sys_inb(STAT_REG, &stat);
-			if (stat & OBF) {
-				sys_inb(OUT_BUFF, &data);
-				cmd_receive = data;
-				break;
-			}
-		}
-
 		break;
 	}
 }

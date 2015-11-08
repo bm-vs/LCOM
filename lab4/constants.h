@@ -3,7 +3,8 @@
 
 #define BIT(n) (0x01<<(n))
 
-#define MOUSE_HOOK_BIT	BIT(0)
+#define TIMER_HOOK_BIT	BIT(0)
+#define MOUSE_HOOK_BIT	BIT(1)
 #define MOUSE_IRQ	12
 
 #define MOUSE_FIRST_BYTE	BIT(3)
