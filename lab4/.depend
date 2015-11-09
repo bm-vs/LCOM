@@ -106,6 +106,7 @@ mouse.o:	/usr/pkg/gcc44/lib/gcc/i686-pc-minix/4.4.3/include/stdarg.h
 mouse.o:	constants.h
 mouse.o:	mouse.c
 mouse.o:	mouse.h
+mouse.o:	timer.h
 
 test4.o:	/usr/include/errno.h
 test4.o:	/usr/include/limits.h
