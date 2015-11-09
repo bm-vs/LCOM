@@ -128,9 +128,9 @@ long get_byte() {
 
 
 int print_packet(char data_packet[]) {
-	printf("B1=0x%02x ", (data_packet[0]));
-	printf("B2=0x%02x ", (data_packet[1]));
-	printf("B3=0x%02x ", (data_packet[2]));
+	printf("B1=0x%02x ", data_packet[0]);
+	printf("B2=0x%02x ", data_packet[1]);
+	printf("B3=0x%02x ", data_packet[2]);
 
 	if (LB == (data_packet[0] & LB)) {
 		printf("LB=1 ");
