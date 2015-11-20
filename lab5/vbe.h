@@ -2,6 +2,9 @@
 #define __VBE_H
 
 #include <stdint.h>
+#include "lmlib.h"
+#include "constants.h"
+
 
 /** @defgroup vbe vbe
  * @{

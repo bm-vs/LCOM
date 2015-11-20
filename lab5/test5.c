@@ -1,7 +1,16 @@
+#include "test5.h"
+
 void *test_init(unsigned short mode, unsigned short delay) {
-	
-	/* To be completed */
-	
+
+	char* video_mem;
+	video_mem = vg_init(mode);
+
+	timer_test_int(delay);
+
+	vg_exit();
+
+	printf("\nPhysical address of VRAM: 0x%X\n", video_mem);
+	return video_mem;
 }
 
 
