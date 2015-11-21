@@ -9,6 +9,7 @@
 #include <stdio.h>
 
 #include "timer.h"
+#include "kbd.h"
 #include "vbe.h"
 
 /** @defgroup lab5 lab5

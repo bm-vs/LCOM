@@ -21,6 +21,7 @@
 
 
 /* Constants for VBE 0x105 mode */
+#define VBE_105_MODE	0x105
 #define VRAM_PHYS_ADDR	0xF0000000
 #define H_RES           1024
 #define V_RES		  	768
@@ -88,6 +89,25 @@
 #define BIT_2 					BIT(2)
 #define BIT_1 					BIT(1)
 #define BIT_0 					BIT(0)
+
+//=======================================================================================================
+// KEYBOARD
+
+#define KBD_IRQ			1
+#define KBD_HOOK_BIT	1
+
+#define STAT_REG		0x64
+#define OUT_BUFF		0x60
+
+#define TOGGLE_LEDS		0xED
+
+#define BREAKCODE		0x80
+
+#define ESC				0x81
+
+#define SCROLL_LOCK		BIT(0)
+#define NUM_LOCK		BIT(1)
+#define CAPS_LOCK		BIT(2)
 
 
 

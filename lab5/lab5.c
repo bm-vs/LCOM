@@ -40,14 +40,14 @@ static void print_usage(char *argv[]) {
 }
 
 static int proc_args(int argc, char *argv[]) {
-	unsigned short mode;
-	unsigned short delay;
-
 	if (strncmp(argv[1], "init", strlen("init")) == 0) {
 		if(argc != 4) {
 			printf("init: wrong no of arguments for test of test_init() \n");
 			return 1;
 		}
+
+		unsigned short mode;
+		unsigned short delay;
 
 		printf("\ntest_init()\n");
 
@@ -55,37 +55,45 @@ static int proc_args(int argc, char *argv[]) {
 		delay = strtoul(argv[3], NULL, DEC);
 
 		test_init(mode, delay);
-	} /*
+	}
 	else if (strncmp(argv[1], "square", strlen("square")) == 0) {
-		if(argc != 5) {
+		if(argc != 6) {
 			printf("square: wrong no of arguments for test of test_square() \n");
 			return 1;
 		}
 
+		unsigned short x;
+		unsigned short y;
+		unsigned short size;
+		unsigned long color;
+
 		printf("\ntest_square()\n");
-		idle_time = atoi(argv[2]);
+		x = strtoul(argv[2], NULL, DEC);
+		y = strtoul(argv[3], NULL, DEC);
+		size = strtoul(argv[4], NULL, DEC);
+		color = strtoul(argv[5], NULL, DEC);
 
-		test_async(idle_time);
+		test_square(x, y, size, color);
 	}
-	else if (strncmp(argv[1], "config", strlen("config")) == 0) {
-		if(argc != 2) {
-			printf("config: wrong no of arguments for test of test_config() \n");
+	else if (strncmp(argv[1], "line", strlen("line")) == 0) {
+		if(argc != 7) {
+			printf("line: wrong no of arguments for test of test_line() \n");
 			return 1;
 		}
 
-		printf("\ntest_config()\n");
-		test_config();
+		unsigned short xi;
+		unsigned short yi;
+		unsigned short xf;
+		unsigned short yf;
+		unsigned long color;
+
+		printf("\ntest_line()\n");
+		xi = strtoul(argv[2], NULL, DEC);
+		yi = strtoul(argv[3], NULL, DEC);
+		xf = strtoul(argv[4], NULL, DEC);
+		yf = strtoul(argv[5], NULL, DEC);
+		color = strtoul(argv[6], NULL, DEC);
+
+		test_line(xi, yi, xf, yf, color);
 	}
-	else if (strncmp(argv[1], "gesture", strlen("gesture")) == 0) {
-		if(argc != 4) {
-			printf("gesture: wrong no of arguments for test of test_gesture() \n");
-			return 1;
-		}
-
-		printf("\ntest_gesture()\n");
-		length = atoi(argv[2]);
-		tolerance = atoi(argv[3]);
-
-		test_gesture(length, tolerance);
-	}*/
  }
