@@ -20,6 +20,11 @@
  */
 void *vg_init(unsigned short mode);
 
+void vg_draw_square(unsigned short x, unsigned short y, unsigned short size, unsigned long color, char *video_mem);
+
+void vg_draw_line(unsigned short xi, unsigned short yi,
+		           unsigned short xf, unsigned short yf, unsigned long color, char *video_mem);
+
  /**
  * @brief Returns to default Minix 3 text mode (0x03: 25 x 80, 16 colors)
  * 
