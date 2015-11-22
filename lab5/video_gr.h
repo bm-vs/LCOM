@@ -1,6 +1,8 @@
 #ifndef __VIDEO_GR_H
 #define __VIDEO_GR_H
 
+#include "sprite.h"
+
 /** @defgroup video_gr video_gr
  * @{
  *
@@ -24,6 +26,14 @@ void vg_draw_square(unsigned short x, unsigned short y, unsigned short size, uns
 
 void vg_draw_line(unsigned short xi, unsigned short yi,
 		           unsigned short xf, unsigned short yf, unsigned long color, char *video_mem);
+
+int vg_draw_pixmap(unsigned short xi, unsigned short yi, unsigned short height, unsigned short width,
+		char *pixmap, char *video_mem);
+
+void vg_erase_pixmap(unsigned short xi, unsigned short yi, unsigned short height, unsigned short width,
+		char *pixmap, char *video_mem);
+
+int vg_move_sprite(Sprite *sprite, unsigned short hor, short delta, unsigned short time, char *video_mem);
 
  /**
  * @brief Returns to default Minix 3 text mode (0x03: 25 x 80, 16 colors)

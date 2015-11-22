@@ -11,6 +11,7 @@
 #include "timer.h"
 #include "kbd.h"
 #include "vbe.h"
+#include "sprite.h"
 
 /** @defgroup lab5 lab5
  * @{

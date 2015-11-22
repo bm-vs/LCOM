@@ -3,6 +3,7 @@
 
 #include "constants.h"
 #include "test5.h"
+#include "pixmap.h"
 
 static int proc_args(int argc, char *argv[]);
 static void print_usage(char *argv[]);
@@ -32,9 +33,9 @@ static void print_usage(char *argv[]) {
 		  "<unsigned long color>\" \n"
      "\t service run %s -args \"line <unsigned short xi> <unsigned short yi> <unsigned short xf>"
 		  "<unsigned short yf> <unsigned long color>\" \n"
-	 "\t service run %s -args \"xpm <unsigned short xi> <unsigned short yi> <char *xpm[]>\" \n"
-	 "\t service run %s -args \"move <unsigned short xi> <unsigned short yi> <char *xpm[]> <unsigned short hor>"
-		  "<short delta> <unsigned short time>\" \n"
+	 "\t service run %s -args \"xpm <unsigned short xi> <unsigned short yi> <unsigned short xpm>\" \n"
+	 "\t service run %s -args \"move <unsigned short xi> <unsigned short yi> <unsigned short xpm>"
+		  "<unsigned short hor> <short delta> <unsigned short time>\" \n"
 	 "\t service run %s -args \"controller\" \n",
 	 argv[0], argv[0], argv[0], argv[0], argv[0], argv[0]);
 }
@@ -96,4 +97,57 @@ static int proc_args(int argc, char *argv[]) {
 
 		test_line(xi, yi, xf, yf, color);
 	}
+	else if (strncmp(argv[1], "xpm", strlen("xpm")) == 0) {
+
+		if (argc != 5) {
+			printf("xpm: wrong no of arguments for test of test_xpm() \n");
+			return 1;
+		}
+
+		unsigned short xi;
+		unsigned short yi;
+		unsigned short xpm;
+
+		printf("\ntest_xpm()\n");
+		xi = strtoul(argv[2], NULL, DEC);
+		yi = strtoul(argv[3], NULL, DEC);
+		xpm = strtoul(argv[4], NULL, DEC);
+
+		if (get_pixmap(xpm) == NULL) {
+			printf("Image not found\n");
+		}
+		else {
+			test_xpm(xi, yi, get_pixmap(xpm));
+		}
+	}
+	else if (strncmp(argv[1], "move", strlen("move")) == 0) {
+
+		if (argc != 8) {
+			printf("move: wrong no of arguments for test of test_move() \n");
+			return 1;
+		}
+
+		unsigned short xi;
+		unsigned short yi;
+		unsigned short xpm;
+		unsigned short hor;
+		unsigned short delta;
+		unsigned short time;
+
+		printf("\ntest_xpm()\n");
+		xi = strtoul(argv[2], NULL, DEC);
+		yi = strtoul(argv[3], NULL, DEC);
+		xpm = strtoul(argv[4], NULL, DEC);
+		hor = strtoul(argv[5], NULL, DEC);
+		delta = strtoul(argv[6], NULL, DEC);
+		time = strtoul(argv[7], NULL, DEC);
+
+		if (get_pixmap(xpm) == NULL) {
+			printf("Image not found\n");
+		}
+		else {
+			test_move(xi, yi, get_pixmap(xpm), hor, delta, time);
+		}
+	}
+
  }

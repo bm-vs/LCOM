@@ -13,7 +13,6 @@ void *test_init(unsigned short mode, unsigned short delay) {
 	return video_mem;
 }
 
-
 int test_square(unsigned short x, unsigned short y, unsigned short size, unsigned long color) {
 	if (x < 0 || x >= H_RES) {
 		printf("Invalid value of x.\n");
@@ -39,7 +38,9 @@ int test_square(unsigned short x, unsigned short y, unsigned short size, unsigne
 	vg_draw_square(x, y, size, color, video_mem);
 
 	if (kbd_scan_esc() == 1) {
+		vg_exit();
 		printf("Error on keyboard read.\n");
+		return 1;
 	}
 
 	vg_exit();
@@ -76,7 +77,9 @@ int test_line(unsigned short xi, unsigned short yi,
 
 	exit:
 		if (kbd_scan_esc() == 1) {
+			vg_exit();
 			printf("Error on keyboard read.\n");
+			return 1;
 		}
 
 		vg_exit();
@@ -86,16 +89,69 @@ int test_line(unsigned short xi, unsigned short yi,
 }
 
 int test_xpm(unsigned short xi, unsigned short yi, char *xpm[]) {
+	if (xi < 0 || xi >= H_RES) {
+		printf("Invalid value of xi.\n");
+		return 1;
+	}
+	else if (yi < 0 || yi >= V_RES) {
+		printf("Invalid value of yi.\n");
+		return 1;
+	}
+
 	
-	/* To be completed */
+	char* video_mem;
+	video_mem = vg_init(VBE_105_MODE);
+
+	int width, height;
+	char *pixmap = read_xpm(xpm, &width, &height);
+
+	if (vg_draw_pixmap(xi, yi, width, height, pixmap, video_mem) == 1) {
+		vg_exit();
+		printf("Image does not fit the screen at those coordinates.\n");
+		return 1;
+	}
+
+
+	if (kbd_scan_esc() == 1) {
+		vg_exit();
+		printf("Error on keyboard read.\n");
+		return 1;
+	}
 	
+	vg_exit();
+
+	return 0;
 }	
 
 int test_move(unsigned short xi, unsigned short yi, char *xpm[], 
 				unsigned short hor, short delta, unsigned short time) {
 	
-	/* To be completed */
+	if (xi < 0 || xi >= H_RES) {
+		printf("Invalid value of xi.\n");
+		return 1;
+	}
+	else if (yi < 0 || yi >= V_RES) {
+		printf("Invalid value of yi.\n");
+		return 1;
+	}
+
+
+	char* video_mem;
+	video_mem = vg_init(VBE_105_MODE);
+
+	Sprite *sprite = create_sprite(xpm, xi, yi);
+	vg_move_sprite(sprite, hor, delta, time, video_mem);
+
+	if (kbd_scan_esc() == 1) {
+		vg_exit();
+		printf("Error on keyboard read.\n");
+		return 1;
+	}
 	
+	vg_exit();
+
+	return 0;
+
 }					
 
 int test_controller() {
