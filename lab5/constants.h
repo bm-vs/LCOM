@@ -15,9 +15,16 @@
 #define SET_VIDEO_MODE		0x02
 #define LINEAR_MODEL_BIT	14
 #define SET_TEXT_FUNCTION	0x0
+#define RETURN_DATA			0x0
+#define VBE_SIGNATURE		"VBE2"
+
+#define D0	BIT(0)
+#define D1	BIT(1)
+#define D2	BIT(2)
 
 #define PB2BASE(x) (((x) >> 4) & 0x0F000)
 #define PB2OFF(x) ((x) & 0x0FFFF)
+
 
 
 /* Constants for VBE 0x105 mode */

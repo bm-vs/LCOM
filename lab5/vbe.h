@@ -79,6 +79,27 @@ typedef struct {
 
 /** @} end of vbe_mode_info_t*/
 
+
+typedef struct {
+	char VbeSignature[4];
+	uint16_t VbeVersion;
+	phys_bytes OemStringPtr;
+	uint32_t Capabilities;
+	phys_bytes VideoModePtr;
+	uint16_t TotalMemory;
+
+	uint16_t OemSoftwareRev;
+	phys_bytes OemVendorNamePtr;
+	phys_bytes OemProductNamePtr;
+	phys_bytes OemProductRevPtr;
+
+	uint8_t Reserved[222];
+	uint8_t OemData[256];
+
+} __attribute__((packed)) vbe_info_block;
+
+
+
 /**
  * @brief Returns information on the input VBE mode, including screen dimensions, color depth and VRAM physical address
  * 

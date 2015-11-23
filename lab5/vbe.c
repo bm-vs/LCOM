@@ -30,6 +30,13 @@ int vbe_get_mode_info(unsigned short mode, vbe_mode_info_t *vmi_p) {
 	return 0;
 }
 
+
+
+
+
+
+
+
 void swap(unsigned short * a, unsigned short * b) {
 	unsigned short tmp;
 

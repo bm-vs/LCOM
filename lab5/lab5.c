@@ -149,5 +149,12 @@ static int proc_args(int argc, char *argv[]) {
 			test_move(xi, yi, get_pixmap(xpm), hor, delta, time);
 		}
 	}
+	else if (strncmp(argv[1], "controller", strlen("controller")) == 0) {
+		if (argc != 2) {
+			printf("controller: wrong no of arguments for test of test_controller() \n");
+			return 1;
+		}
 
+		test_controller();
+	}
  }

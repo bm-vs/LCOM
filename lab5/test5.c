@@ -156,7 +156,84 @@ int test_move(unsigned short xi, unsigned short yi, char *xpm[],
 
 int test_controller() {
 	
-	/* To be completed */
+	void* init = lm_init();
+
+	uint16_t *video_modes;
+	vbe_info_block vbe_info;
+	unsigned num_video_modes;
+	mmap_t map;
+
+	lm_alloc(sizeof(vbe_info_block), &map);
+
+	memcpy(vbe_info.VbeSignature, VBE_SIGNATURE, sizeof(VBE_SIGNATURE));
+
+	struct reg86u reg86;
+
+	reg86.u.b.intno = VBE_INTERRUPT;
+	reg86.u.b.ah = VBE_FUNCTION;
+	reg86.u.b.al = RETURN_DATA;
+	reg86.u.w.es = PB2BASE(map.phys);
+	reg86.u.w.di = PB2OFF(map.phys);
+
+	sys_int86(&reg86);
+
+	vbe_info = *((vbe_info_block *)map.virtual);
+
+	void *ptr = (void *)((vbe_info.VideoModePtr & 0xffff0000) >> 12);
+	ptr += PB2OFF(vbe_info.VideoModePtr);
+	ptr += (uint32_t)map.virtual & 0xF0000000;
+
+	lm_free(&map);
 	
+	int16_t *modes = ptr;
+
+	num_video_modes = 0;
+
+	while (*modes != -1) {
+		modes++;
+		num_video_modes++;
+	}
+
+	video_modes = malloc(num_video_modes * sizeof(uint16_t));
+
+	int i;
+	modes = ptr;
+	for (i = 0; i < num_video_modes; i++) {
+		video_modes[i] = modes;
+		modes++;
+	}
+
+	printf("\n\nCapabilities: 0x%02x\n\n", vbe_info.Capabilities);
+	if (vbe_info.Capabilities & D0 == D0) {
+		printf("DAC width is switchable to 8 bits per primary color\n");
+	} else {
+		printf("DAC is fixed width, with 6 bits per primary color\n");
+	}
+
+	if (vbe_info.Capabilities & D1 == D1) {
+		printf("Controller is not VGA compatible\n");
+	} else {
+		printf("Controller is VGA compatible\n");
+	}
+
+	if (vbe_info.Capabilities & D2 == D2) {
+		printf("When programming large blocks of information to the RAMDAC,\nuse the blank bit in Function 09h.\n");
+	} else {
+		printf("Normal RAMDAC operation\n");
+	}
+
+	printf("\nVideo modes:\n");
+
+	for (i = 0; i < num_video_modes; i++) {
+		printf("0x%02x", video_modes[i]);
+		if (i != num_video_modes - 1) {
+			printf(", ");
+		}
+	}
+
+	free(video_modes);
+	printf("\n\nSize of VRAM: %lu KB\n", vbe_info.TotalMemory * 64);
+
+	return 0;
 }					
 	
