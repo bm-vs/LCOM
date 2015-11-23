@@ -165,7 +165,10 @@ int test_controller() {
 
 	lm_alloc(sizeof(vbe_info_block), &map);
 
-	memcpy(vbe_info.VbeSignature, VBE_SIGNATURE, sizeof(VBE_SIGNATURE));
+	vbe_info.VbeSignature[0] = '2';
+	vbe_info.VbeSignature[1] = 'E';
+	vbe_info.VbeSignature[2] = 'B';
+	vbe_info.VbeSignature[3] = 'V';
 
 	struct reg86u reg86;
 
@@ -179,29 +182,7 @@ int test_controller() {
 
 	vbe_info = *((vbe_info_block *)map.virtual);
 
-	void *ptr = (void *)((vbe_info.VideoModePtr & 0xffff0000) >> 12);
-	ptr += PB2OFF(vbe_info.VideoModePtr);
-	ptr += (uint32_t)map.virtual & 0xF0000000;
-
 	lm_free(&map);
-	
-	int16_t *modes = ptr;
-
-	num_video_modes = 0;
-
-	while (*modes != -1) {
-		modes++;
-		num_video_modes++;
-	}
-
-	video_modes = malloc(num_video_modes * sizeof(uint16_t));
-
-	int i;
-	modes = ptr;
-	for (i = 0; i < num_video_modes; i++) {
-		video_modes[i] = modes;
-		modes++;
-	}
 
 	printf("\n\nCapabilities: 0x%02x\n\n", vbe_info.Capabilities);
 	if (vbe_info.Capabilities & D0 == D0) {
@@ -224,11 +205,24 @@ int test_controller() {
 
 	printf("\nVideo modes:\n");
 
-	for (i = 0; i < num_video_modes; i++) {
-		printf("0x%02x", video_modes[i]);
-		if (i != num_video_modes - 1) {
-			printf(", ");
+	phys_bytes phys = (void *)((vbe_info.VideoModePtr & 0xffff0000) >> 12);
+	phys += PB2OFF(vbe_info.VideoModePtr);
+	short *ptr = init + phys;
+
+	int16_t *modes = ptr;
+
+	num_video_modes = 0;
+
+	printf("0x%02x", *modes);
+
+	while (1) {
+		modes++;
+		num_video_modes++;
+		if (*modes == -1) {
+			break;
 		}
+		printf(", ");
+		printf("0x%02x", *modes);
 	}
 
 	free(video_modes);
