@@ -39,8 +39,6 @@ int kbd_int_handler() {
 	if ((stat & BREAKCODE) != BREAKCODE) {
 		return stat;
 	}
-
-	return -1;
 }
 
 int kbd_scan_esc() {

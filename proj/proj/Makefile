@@ -1,11 +1,11 @@
-# Makefile for the lab5 driver
+# Makefile for the proj
 
 COMPILER_TYPE= gnu
 
 CC=gcc
 
 PROG=	proj
-SRCS=	proj.c   test.c   timer.c   kbd.c   vbe.c   video_gr.c   read_xpm.c   pixmap.c   sprite.c
+SRCS=	proj.c   test.c   timer.c   kbd.c   vbe.c   video_gr.c   read_xpm.c   pixmap.c   sprite.c	mouse.c
 
 CCFLAGS= -Wall
 

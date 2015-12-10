@@ -161,7 +161,9 @@ int vg_draw_pixmap(unsigned short xi, unsigned short yi, unsigned short height, 
 	int x_pos;
 	for (y_pos = 0; y_pos < height; y_pos++) {
 		for (x_pos = 0; x_pos < width; x_pos++) {
-			video_mem[vram_pos] = pixmap[sprite_pos];
+			if (pixmap[sprite_pos] != 0) {
+				video_mem[vram_pos] = pixmap[sprite_pos];
+			}
 			vram_pos++;
 			sprite_pos++;
 		}

@@ -16,7 +16,6 @@
 #define LINEAR_MODEL_BIT	14
 #define SET_TEXT_FUNCTION	0x0
 #define RETURN_DATA			0x0
-#define VBE_SIGNATURE
 
 #define D0	BIT(0)
 #define D1	BIT(1)
@@ -48,6 +47,7 @@
 #define BIT(n) (0x01<<(n))
 
 #define TIMER0_IRQ	        0    /**< @brief Timer 0 IRQ line */
+#define TIMER_HOOK_BIT		0
 
 /* I/O port addresses */
 
@@ -113,18 +113,59 @@
 
 #define BREAKCODE		0x80
 
-#define ESC		0x81
-#define KEY_A	0x1e
-#define KEY_D	0x20
-#define KEY_Q	0x10
-#define KEY_W	0x11
-#define KEY_E	0x12
+#define ESC			0x81
+#define KEY_A		0x1e
+#define BREAK_A		0x9e
+#define KEY_D		0x20
+#define BREAK_D		0xa0
+#define KEY_Q		0x10
+#define KEY_W		0x11
+#define KEY_E		0x12
+#define KEY_SPACE	0x39
 
 
 #define SCROLL_LOCK		BIT(0)
 #define NUM_LOCK		BIT(1)
 #define CAPS_LOCK		BIT(2)
 
+
+//=======================================================================================================
+// MOUSE
+
+#define MOUSE_HOOK_BIT	2
+#define MOUSE_IRQ	12
+
+#define MOUSE_FIRST_BYTE	BIT(3)
+
+#define WRITE_TO_MOUSE	0xD4
+#define SET_STREAM_MODE	0xEA
+#define DATA_STREAM_ON	0xF4
+#define STATUS_REQUEST 0xE9
+
+#define ACK  0xFA
+
+#define OUT_BUFF	0x60
+#define STAT_REG	0x64
+
+#define IBF	BIT(1)
+#define OBF BIT(0)
+
+#define LB BIT(0)
+#define RB BIT(1)
+#define MB BIT(2)
+#define XSIGN BIT(4)
+#define YSIGN BIT(5)
+#define XOV BIT(6)
+#define YOV BIT(7)
+
+#define REMOTE BIT(6)
+#define ENABLE BIT(5)
+#define SCALING BIT(4)
+#define LEFT BIT(2)
+#define MIDDLE BIT(1)
+#define RIGHT BIT(0)
+
+#define WAIT_KBC 2000
 
 
 #endif
