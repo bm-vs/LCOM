@@ -1,5 +1,7 @@
 #include "test.h"
 
+#define SHOT_SPEED 20
+
 void move_and_shoot() {
 	int r, ipc_status, scan_result;
 	message msg;
@@ -8,6 +10,7 @@ void move_and_shoot() {
 	int byte_nr = 1;
 	char byte_read, byte1, byte2, byte3;
 	char data_packet[3];
+	int counter = 0;
 
 
 	if (kbd_subscribe_int() != 1) {
@@ -35,6 +38,9 @@ void move_and_shoot() {
 	draw_sprite(crosshair, mouse_buffer);
 	memcpy(video_mem, mouse_buffer, H_RES*V_RES);
 
+	vector shots;
+	vector_init(&shots);
+
 	mouse_set_stream_mode();
 	mouse_enable_stream();
 
@@ -54,7 +60,17 @@ void move_and_shoot() {
 				// TIMER
 
 				if (msg.NOTIFY_ARG & BIT(TIMER_HOOK_BIT)) {
+
+					// Delete character
 					erase_sprite(character, double_buffer);
+
+					// Delete shots
+					int i;
+					for (i = 0; i < shots.size; i++) {
+						erase_sprite(shots.items[i], double_buffer);
+					}
+
+					// Move character
 					move_sprite(character, H_RES, V_RES, double_buffer);
 
 					if (check_collision_sprite(character, H_RES, V_RES, double_buffer) == 1) {
@@ -66,17 +82,34 @@ void move_and_shoot() {
 						set_x_speed_sprite(character, 0);
 					}
 
-					if (character->jumping == 1) {
+					if (character->jumping == 1 && (counter % 2 == 0)) {
 						move_sprite(character, H_RES, V_RES, double_buffer);
 						set_y_speed_sprite(character, character->y_speed + 1);
 					}
 
+					// Move shots
+					for (i = 0; i < shots.size; i++) {
+						move_sprite(shots.items[i], H_RES, V_RES, double_buffer);
+					}
 
+					// Draw character
 					draw_sprite(character, double_buffer);
+
+					// Draw shots
+					for (i = 0; i < shots.size; i++) {
+						draw_sprite(shots.items[i], double_buffer);
+					}
+
+					// Copy double buffer to mouse buffer
 					memcpy(mouse_buffer, double_buffer, H_RES*V_RES);
 
+					// Draw crosshair to mouse buffer
 					draw_sprite(crosshair, mouse_buffer);
+
+					// Copy mouse buffer to video memory
 					memcpy(video_mem, mouse_buffer, H_RES*V_RES);
+
+					counter++;
 				}
 
 				//=========================================================================================
@@ -97,8 +130,9 @@ void move_and_shoot() {
 						// JUMP
 
 						// jump straight
-						if ((kbd_int_handler() == KEY_W || kbd_int_handler() == KEY_SPACE) && character->jumping == 0) {
-							set_y_speed_sprite(character, -15);
+						if ((kbd_int_handler() == KEY_W || kbd_int_handler() == KEY_SPACE)
+								&& character->jumping == 0) {
+							set_y_speed_sprite(character, -12);
 							character->jumping = 1;
 						}
 
@@ -116,7 +150,6 @@ void move_and_shoot() {
 
 				if (msg.NOTIFY_ARG & BIT(MOUSE_HOOK_BIT)) {
 
-					erase_sprite(crosshair, mouse_buffer);
 					byte_read = get_byte();
 
 					switch(byte_nr) {
@@ -141,7 +174,18 @@ void move_and_shoot() {
 							data_packet[2] = byte3;
 
 							n_packets++;
-							packet_handler(data_packet, crosshair, mouse_buffer);
+							if (packet_handler(data_packet, crosshair, mouse_buffer) == 1) {
+								Sprite *shot = create_sprite(get_pixmap(1), character->x, character->y);
+								int x = character->x - crosshair->x;
+								int y = character->y - crosshair->y;
+								int l = sqrt(x*x + y*y);
+								int t = l/SHOT_SPEED;
+
+								shot->x_speed = -x/t;
+								shot->y_speed = -y/t;
+
+								vector_push_back(&shots, shot);
+							}
 							break;
 						}
 					}
@@ -364,4 +408,28 @@ void shoot() {
 	}
 
 	mouse_unsubscribe_int();
+}
+
+
+void test_vector() {
+	vector v;
+
+	vector_init(&v);
+
+	vector_push_back(&v, 1);
+	vector_push_back(&v, 2);
+	vector_push_back(&v, 3);
+	vector_push_back(&v, 4);
+	vector_push_back(&v, 5);
+
+	vector_erase(&v, 4);
+	vector_erase(&v, 2);
+
+
+	printf("%d", v.items[0]);
+	printf("%d", v.items[1]);
+	printf("%d", v.items[2]);
+	printf("%d\n", v.items[3]);
+	printf("%d", v.size);
+
 }

@@ -57,4 +57,12 @@ static int proc_args(int argc, char *argv[]) {
 
 		shoot();
 	}
+	if (strncmp(argv[1], "vector", strlen("vector")) == 0) {
+		if(argc != 2) {
+			printf("vector: wrong no of arguments \n");
+			return 1;
+		}
+
+		test_vector();
+	}
  }

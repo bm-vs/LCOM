@@ -173,6 +173,7 @@ proj.o:	sprite.h
 proj.o:	test.h
 proj.o:	timer.h
 proj.o:	vbe.h
+proj.o:	vector.h
 
 read_xpm.o:	/usr/include/limits.h
 read_xpm.o:	/usr/include/minix/dir.h
@@ -208,6 +209,7 @@ test.o:	/usr/include/machine/interrupt.h
 test.o:	/usr/include/machine/mcontext.h
 test.o:	/usr/include/machine/ports.h
 test.o:	/usr/include/machine/stackframe.h
+test.o:	/usr/include/mathconst.h
 test.o:	/usr/include/minix/bitmap.h
 test.o:	/usr/include/minix/callnr.h
 test.o:	/usr/include/minix/com.h
@@ -241,6 +243,7 @@ test.o:	/usr/include/sys/ucred.h
 test.o:	/usr/include/timers.h
 test.o:	/usr/pkg/gcc44/lib/gcc/i686-pc-minix/4.4.3/include-fixed/ansi.h
 test.o:	/usr/pkg/gcc44/lib/gcc/i686-pc-minix/4.4.3/include-fixed/limits.h
+test.o:	/usr/pkg/gcc44/lib/gcc/i686-pc-minix/4.4.3/include-fixed/math.h
 test.o:	/usr/pkg/gcc44/lib/gcc/i686-pc-minix/4.4.3/include-fixed/signal.h
 test.o:	/usr/pkg/gcc44/lib/gcc/i686-pc-minix/4.4.3/include-fixed/stddef.h
 test.o:	/usr/pkg/gcc44/lib/gcc/i686-pc-minix/4.4.3/include-fixed/stdio.h
@@ -257,6 +260,7 @@ test.o:	test.c
 test.o:	test.h
 test.o:	timer.h
 test.o:	vbe.h
+test.o:	vector.h
 
 timer.o:	/usr/include/errno.h
 timer.o:	/usr/include/limits.h
@@ -367,6 +371,9 @@ vbe.o:	constants.h
 vbe.o:	lmlib.h
 vbe.o:	vbe.c
 vbe.o:	vbe.h
+
+vector.o:	vector.c
+vector.o:	vector.h
 
 video_gr.o:	/usr/include/errno.h
 video_gr.o:	/usr/include/limits.h

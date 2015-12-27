@@ -8,11 +8,14 @@
 #include <minix/com.h>
 #include <stdio.h>
 #include <string.h>
+#include <math.h>
 
 #include "timer.h"
 #include "kbd.h"
 #include "vbe.h"
 #include "sprite.h"
+#include "vector.h"
+
 
 void move_and_shoot();
 void move();
