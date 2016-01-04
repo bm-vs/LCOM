@@ -36,6 +36,8 @@
 
 
 #define BLACK	0
+#define PLATFORM_COLOR_1 57
+#define PLATFORM_COLOR_2 8
 
 //=======================================================================================================
 // TIMER
@@ -122,6 +124,12 @@
 #define KEY_W		0x11
 #define KEY_E		0x12
 #define KEY_SPACE	0x39
+#define KEY_I		0x17
+#define BREAK_I		0x97
+#define KEY_J		0x24
+#define	BREAK_J		0xa4
+#define KEY_L		0x26
+#define BREAK_L		0xa6
 
 
 #define SCROLL_LOCK		BIT(0)

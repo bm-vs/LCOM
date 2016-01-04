@@ -20,6 +20,5 @@ int mouse_enable_stream();
 int mouse_status_request();
 long get_byte();
 int packet_handler(char data_packet[], Sprite *sprite, char *video_mem);
-int print_status(char data_packet[]);
 
 #endif

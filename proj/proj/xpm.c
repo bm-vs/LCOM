@@ -1,12 +1,37 @@
-/**
- *  @author Joao Cardoso (jcard@fe.up.pt) ????
- *  Added by pfs@fe.up.pt
- */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-#include "read_xpm.h"
+#include "xpm.h"
+
+char **get_pixmap(unsigned short xpm) {
+	char **images[N_IMAGES];
+
+	images[0] = shot;
+	images[1] = crosshair;
+	images[2] = platform;
+    images[3] = arrow;
+    images[4] = blue_tropper;
+    images[5] = red_tropper;
+    images[6] = hearth;
+    images[7] = pewpew;
+    images[8] = start;
+    images[9] = player;
+    images[10] = player1;
+    images[11] = player2;
+    images[12] = wins;
+    images[13] = exclamation;
+    images[14] = time_bar;
+    images[15] = time_bar_other;
+
+	if (xpm < 0 || xpm >= N_IMAGES) {
+		return NULL;
+	}
+	else {
+		return images[xpm];
+	}
+}
+
 
 // DEFAULTED TO VBE 0x105 MODE
 char *read_xpm(char *map[], int *wd, int *ht)
@@ -23,6 +48,7 @@ char *read_xpm(char *map[], int *wd, int *ht)
     printf("read_xpm: incorrect width, height, colors\n");
     return NULL;
   }
+
 #ifdef DEBUG
   printf("%d %d %d\n", width, height, colors);
 #endif

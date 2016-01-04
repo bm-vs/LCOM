@@ -1,5 +1,5 @@
-#ifndef __TEST5_H
-#define __TEST5_H
+#ifndef __GAME_H
+#define __GAME_H
 
 #include <minix/syslib.h>
 #include <minix/drivers.h>
@@ -12,13 +12,16 @@
 
 #include "timer.h"
 #include "kbd.h"
-#include "vbe.h"
+#include "video_gr.h"
 #include "sprite.h"
 #include "vector.h"
+#include "vbe.h"
 
 
-void move_and_shoot();
-void move();
-void shoot();
+int game(char *video_mem, int player, int time_other_player);
+
+int menu(char *video_mem);
+
+void player_wins(char *video_mem, int player);
 
 #endif

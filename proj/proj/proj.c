@@ -2,67 +2,46 @@
 #include <stdlib.h>
 
 #include "constants.h"
-#include "test.h"
-#include "pixmap.h"
+#include "game.h"
+#include "xpm.h"
 
 static int proc_args(int argc, char *argv[]);
-static void print_usage(char *argv[]);
 
 int main(int argc, char **argv) {
 
+	/* Initialize service */
 
-  /* Initialize service */
+	sef_startup();
 
-  sef_startup();
+	char *video_mem;
+	video_mem = vg_init(VBE_105_MODE);
+
+	while (1) {
+		if (menu(video_mem) == -1) {
+			break;
+		}
+
+		int n_seconds_player1 = game(video_mem, 1, -1);
+		if (n_seconds_player1 == -1) {
+			break;
+		}
+
+		int n_seconds_player2 = game(video_mem, 2, n_seconds_player1);
+		if (n_seconds_player2 == -1) {
+			break;
+		}
+
+		if (n_seconds_player1 > n_seconds_player2) {
+			player_wins(video_mem, 2);
+		}
+		else {
+			player_wins(video_mem, 1);
+		}
+	}
+
+	vg_exit();
 
 
-  if ( argc == 1 ) {
-      print_usage(argv);
-      return 0;
-  } else {
-      proc_args(argc, argv);
-  }
-  return 0;
+	return 0;
 
 }
-
-static void print_usage(char *argv[]) {
-  printf("\nUsage: one of the following:\n"
-	 "\t service run %s -args \"move\" \n",
-	 argv[0]);
-}
-
-static int proc_args(int argc, char *argv[]) {
-	if (strncmp(argv[1], "ms", strlen("ms")) == 0) {
-		if(argc != 2) {
-			printf("ms: wrong no of arguments \n");
-			return 1;
-		}
-
-		move_and_shoot();
-	}
-	if (strncmp(argv[1], "move", strlen("move")) == 0) {
-		if(argc != 2) {
-			printf("move: wrong no of arguments \n");
-			return 1;
-		}
-
-		move();
-	}
-	if (strncmp(argv[1], "shoot", strlen("shoot")) == 0) {
-		if(argc != 2) {
-			printf("shoot: wrong no of arguments \n");
-			return 1;
-		}
-
-		shoot();
-	}
-	if (strncmp(argv[1], "vector", strlen("vector")) == 0) {
-		if(argc != 2) {
-			printf("vector: wrong no of arguments \n");
-			return 1;
-		}
-
-		test_vector();
-	}
- }
