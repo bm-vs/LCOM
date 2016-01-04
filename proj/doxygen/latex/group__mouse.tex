@@ -1,0 +1,170 @@
+\hypertarget{group__mouse}{}\section{mouse}
+\label{group__mouse}\index{mouse@{mouse}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{group__mouse_ga99506573209b197b84ee22a228b89fbd}{mouse\+\_\+subscribe\+\_\+int} ()
+\begin{DoxyCompactList}\small\item\em Subscribes to the mouse\textquotesingle{}s interrupts. \end{DoxyCompactList}\item 
+int \hyperlink{group__mouse_ga685ad2706aca36d9869a30a19b9f446a}{mouse\+\_\+unsubscribe\+\_\+int} ()
+\begin{DoxyCompactList}\small\item\em Unsubscribes from the mouse\textquotesingle{}s interrupts. \end{DoxyCompactList}\item 
+int \hyperlink{group__mouse_ga16a521d1919cbd8f434d8b5d535a639b}{mouse\+\_\+set\+\_\+stream\+\_\+mode} ()
+\begin{DoxyCompactList}\small\item\em Sends the Set Stream Mode command to port 0x64. \end{DoxyCompactList}\item 
+int \hyperlink{group__mouse_ga6d00dfd9c62a4446f67caea39b64d463}{mouse\+\_\+enable\+\_\+stream} ()
+\begin{DoxyCompactList}\small\item\em Sends the Enable Sending Data Packets command to port 0x64. \end{DoxyCompactList}\item 
+int \hyperlink{group__mouse_gaff2fd99bd9285fa0fc166788f9cc7569}{mouse\+\_\+status\+\_\+request} ()
+\begin{DoxyCompactList}\small\item\em Sends the Status Request command to port 0x64. \end{DoxyCompactList}\item 
+long \hyperlink{group__mouse_ga59b282691a2a3edde462f7b36351a74a}{get\+\_\+byte} ()
+\begin{DoxyCompactList}\small\item\em Receives the data in port 0x60. \end{DoxyCompactList}\item 
+int \hyperlink{group__mouse_ga04bd9f2c1818e56a4604e290a068842b}{packet\+\_\+handler} (char data\+\_\+packet\mbox{[}$\,$\mbox{]}, \hyperlink{struct_sprite}{Sprite} $\ast$sprite, char $\ast$video\+\_\+mem)
+\begin{DoxyCompactList}\small\item\em Receives a mouse data packet and updates the sprite\textquotesingle{}s coordinates accordingly. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Functions related to the mouse. 
+
+\subsection{Function Documentation}
+\hypertarget{group__mouse_ga59b282691a2a3edde462f7b36351a74a}{}\index{mouse@{mouse}!get\+\_\+byte@{get\+\_\+byte}}
+\index{get\+\_\+byte@{get\+\_\+byte}!mouse@{mouse}}
+\subsubsection[{get\+\_\+byte()}]{\setlength{\rightskip}{0pt plus 5cm}long get\+\_\+byte (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{group__mouse_ga59b282691a2a3edde462f7b36351a74a}
+
+
+Receives the data in port 0x60. 
+
+\begin{DoxyReturn}{Returns}
+the date when successful. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+% FIG 0
+
+
+\hypertarget{group__mouse_ga6d00dfd9c62a4446f67caea39b64d463}{}\index{mouse@{mouse}!mouse\+\_\+enable\+\_\+stream@{mouse\+\_\+enable\+\_\+stream}}
+\index{mouse\+\_\+enable\+\_\+stream@{mouse\+\_\+enable\+\_\+stream}!mouse@{mouse}}
+\subsubsection[{mouse\+\_\+enable\+\_\+stream()}]{\setlength{\rightskip}{0pt plus 5cm}int mouse\+\_\+enable\+\_\+stream (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{group__mouse_ga6d00dfd9c62a4446f67caea39b64d463}
+
+
+Sends the Enable Sending Data Packets command to port 0x64. 
+
+\begin{DoxyReturn}{Returns}
+0 if successful. 1 if not. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+% FIG 1
+
+
+\hypertarget{group__mouse_ga16a521d1919cbd8f434d8b5d535a639b}{}\index{mouse@{mouse}!mouse\+\_\+set\+\_\+stream\+\_\+mode@{mouse\+\_\+set\+\_\+stream\+\_\+mode}}
+\index{mouse\+\_\+set\+\_\+stream\+\_\+mode@{mouse\+\_\+set\+\_\+stream\+\_\+mode}!mouse@{mouse}}
+\subsubsection[{mouse\+\_\+set\+\_\+stream\+\_\+mode()}]{\setlength{\rightskip}{0pt plus 5cm}int mouse\+\_\+set\+\_\+stream\+\_\+mode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{group__mouse_ga16a521d1919cbd8f434d8b5d535a639b}
+
+
+Sends the Set Stream Mode command to port 0x64. 
+
+\begin{DoxyReturn}{Returns}
+0 if successful. 1 if not. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+% FIG 2
+
+
+\hypertarget{group__mouse_gaff2fd99bd9285fa0fc166788f9cc7569}{}\index{mouse@{mouse}!mouse\+\_\+status\+\_\+request@{mouse\+\_\+status\+\_\+request}}
+\index{mouse\+\_\+status\+\_\+request@{mouse\+\_\+status\+\_\+request}!mouse@{mouse}}
+\subsubsection[{mouse\+\_\+status\+\_\+request()}]{\setlength{\rightskip}{0pt plus 5cm}int mouse\+\_\+status\+\_\+request (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{group__mouse_gaff2fd99bd9285fa0fc166788f9cc7569}
+
+
+Sends the Status Request command to port 0x64. 
+
+\begin{DoxyReturn}{Returns}
+0 if successful. 1 if not. 
+\end{DoxyReturn}
+\hypertarget{group__mouse_ga99506573209b197b84ee22a228b89fbd}{}\index{mouse@{mouse}!mouse\+\_\+subscribe\+\_\+int@{mouse\+\_\+subscribe\+\_\+int}}
+\index{mouse\+\_\+subscribe\+\_\+int@{mouse\+\_\+subscribe\+\_\+int}!mouse@{mouse}}
+\subsubsection[{mouse\+\_\+subscribe\+\_\+int()}]{\setlength{\rightskip}{0pt plus 5cm}int mouse\+\_\+subscribe\+\_\+int (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{group__mouse_ga99506573209b197b84ee22a228b89fbd}
+
+
+Subscribes to the mouse\textquotesingle{}s interrupts. 
+
+\begin{DoxyReturn}{Returns}
+the mouse\textquotesingle{}s hook bit if successful. -\/1 if not. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+% FIG 3
+
+
+\hypertarget{group__mouse_ga685ad2706aca36d9869a30a19b9f446a}{}\index{mouse@{mouse}!mouse\+\_\+unsubscribe\+\_\+int@{mouse\+\_\+unsubscribe\+\_\+int}}
+\index{mouse\+\_\+unsubscribe\+\_\+int@{mouse\+\_\+unsubscribe\+\_\+int}!mouse@{mouse}}
+\subsubsection[{mouse\+\_\+unsubscribe\+\_\+int()}]{\setlength{\rightskip}{0pt plus 5cm}int mouse\+\_\+unsubscribe\+\_\+int (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{group__mouse_ga685ad2706aca36d9869a30a19b9f446a}
+
+
+Unsubscribes from the mouse\textquotesingle{}s interrupts. 
+
+\begin{DoxyReturn}{Returns}
+0 if successful. -\/1 if not. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+% FIG 4
+
+
+\hypertarget{group__mouse_ga04bd9f2c1818e56a4604e290a068842b}{}\index{mouse@{mouse}!packet\+\_\+handler@{packet\+\_\+handler}}
+\index{packet\+\_\+handler@{packet\+\_\+handler}!mouse@{mouse}}
+\subsubsection[{packet\+\_\+handler(char data\+\_\+packet[], Sprite $\ast$sprite, char $\ast$video\+\_\+mem)}]{\setlength{\rightskip}{0pt plus 5cm}int packet\+\_\+handler (
+\begin{DoxyParamCaption}
+\item[{char}]{data\+\_\+packet\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf Sprite} $\ast$}]{sprite, }
+\item[{char $\ast$}]{video\+\_\+mem}
+\end{DoxyParamCaption}
+)}\label{group__mouse_ga04bd9f2c1818e56a4604e290a068842b}
+
+
+Receives a mouse data packet and updates the sprite\textquotesingle{}s coordinates accordingly. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data\+\_\+packet} & array containing the data from the mouse. \\
+\hline
+{\em sprite} & pointer to a sprite. \\
+\hline
+{\em video\+\_\+mem} & virtual address V\+R\+A\+M was mapped to.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the left button is pressed. 0 if not. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+% FIG 5
+
+

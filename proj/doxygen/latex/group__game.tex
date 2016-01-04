@@ -1,0 +1,104 @@
+\hypertarget{group__game}{}\section{game}
+\label{group__game}\index{game@{game}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{group__game_ga860a3ff149bb616ec2242dc34bb52b51}{game} (char $\ast$video\+\_\+mem, int player, int time\+\_\+other\+\_\+player)
+\begin{DoxyCompactList}\small\item\em Primary game function. \end{DoxyCompactList}\item 
+int \hyperlink{group__game_ga792d3a7c31488479811f72b787f85e4d}{menu} (char $\ast$video\+\_\+mem)
+\begin{DoxyCompactList}\small\item\em Function for displaying the menu. \end{DoxyCompactList}\item 
+void \hyperlink{group__game_ga8273bb9d5ec414429bd897d7c95a1303}{player\+\_\+wins} (char $\ast$video\+\_\+mem, int player)
+\begin{DoxyCompactList}\small\item\em Function for displaying the winner of the game. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Functions related to game and user interface. 
+
+\subsection{Function Documentation}
+\hypertarget{group__game_ga860a3ff149bb616ec2242dc34bb52b51}{}\index{game@{game}!game@{game}}
+\index{game@{game}!game@{game}}
+\subsubsection[{game(char $\ast$video\+\_\+mem, int player, int time\+\_\+other\+\_\+player)}]{\setlength{\rightskip}{0pt plus 5cm}int game (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{video\+\_\+mem, }
+\item[{int}]{player, }
+\item[{int}]{time\+\_\+other\+\_\+player}
+\end{DoxyParamCaption}
+)}\label{group__game_ga860a3ff149bb616ec2242dc34bb52b51}
+
+
+Primary game function. 
+
+Responsible for a player\textquotesingle{}s turn. After a turn starts it lasts until who player who is running away loses all its health.
+
+
+\begin{DoxyParams}{Parameters}
+{\em video\+\_\+mem} & virtual address V\+R\+A\+M was mapped to. \\
+\hline
+{\em player} & number of the player that will shoot this turn. \\
+\hline
+{\em time\+\_\+other\+\_\+player} & time the other player took completing his turn (in ms). If no other player as completed a turn this parameter should be -\/1. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of seconds the turn took. -\/1 if the the E\+S\+C key was pressed. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\+:
+% FIG 0
+
+
+\hypertarget{group__game_ga792d3a7c31488479811f72b787f85e4d}{}\index{game@{game}!menu@{menu}}
+\index{menu@{menu}!game@{game}}
+\subsubsection[{menu(char $\ast$video\+\_\+mem)}]{\setlength{\rightskip}{0pt plus 5cm}int menu (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{video\+\_\+mem}
+\end{DoxyParamCaption}
+)}\label{group__game_ga792d3a7c31488479811f72b787f85e4d}
+
+
+Function for displaying the menu. 
+
+Responsible for displaying the menu screen and either indicate the beginning of the game or exit of the program.
+
+
+\begin{DoxyParams}{Parameters}
+{\em video\+\_\+mem} & virtual address V\+R\+A\+M was mapped to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the user chose to begin the game. -\/1 if the E\+S\+C key was pressed. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\+:
+% FIG 1
+
+
+\hypertarget{group__game_ga8273bb9d5ec414429bd897d7c95a1303}{}\index{game@{game}!player\+\_\+wins@{player\+\_\+wins}}
+\index{player\+\_\+wins@{player\+\_\+wins}!game@{game}}
+\subsubsection[{player\+\_\+wins(char $\ast$video\+\_\+mem, int player)}]{\setlength{\rightskip}{0pt plus 5cm}void player\+\_\+wins (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{video\+\_\+mem, }
+\item[{int}]{player}
+\end{DoxyParamCaption}
+)}\label{group__game_ga8273bb9d5ec414429bd897d7c95a1303}
+
+
+Function for displaying the winner of the game. 
+
+Responsible for displaying the player that took the less amount of time to complete its turn.
+
+
+\begin{DoxyParams}{Parameters}
+{\em video\+\_\+mem} & virtual address V\+R\+A\+M was mapped to. \\
+\hline
+{\em player} & number of the player that won the game. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\+:
+% FIG 2
+
+

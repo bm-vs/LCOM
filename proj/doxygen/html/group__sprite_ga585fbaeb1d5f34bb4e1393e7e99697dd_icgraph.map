@@ -1,0 +1,5 @@
+<map id="create_sprite" name="create_sprite">
+<area shape="rect" id="node2" href="$group__game.html#ga860a3ff149bb616ec2242dc34bb52b51" title="Primary game function. " alt="" coords="169,5,223,32"/>
+<area shape="rect" id="node3" href="$group__game.html#ga792d3a7c31488479811f72b787f85e4d" title="Function for displaying the menu. " alt="" coords="169,56,223,83"/>
+<area shape="rect" id="node4" href="$group__game.html#ga8273bb9d5ec414429bd897d7c95a1303" title="Function for displaying the winner of the game. " alt="" coords="151,107,241,133"/>
+</map>

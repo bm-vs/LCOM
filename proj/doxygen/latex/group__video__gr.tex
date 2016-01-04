@@ -1,0 +1,98 @@
+\hypertarget{group__video__gr}{}\section{video\+\_\+gr}
+\label{group__video__gr}\index{video\+\_\+gr@{video\+\_\+gr}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \hyperlink{group__video__gr_gacef21667c79365d57a084bed994c2189}{vg\+\_\+init} (unsigned short mode)
+\begin{DoxyCompactList}\small\item\em Initializes the video module in graphics mode. \end{DoxyCompactList}\item 
+int \hyperlink{group__video__gr_ga8d61f47c55916ab299a43f7fd799d04d}{vg\+\_\+draw\+\_\+pixmap} (unsigned short xi, unsigned short yi, unsigned short height, unsigned short width, char $\ast$pixmap, char $\ast$video\+\_\+mem)
+\begin{DoxyCompactList}\small\item\em Draws a pixmap on the given buffer. \end{DoxyCompactList}\item 
+int \hyperlink{group__video__gr_ga42f593e6656f1a978315aff02b1bcebf}{vg\+\_\+exit} (void)
+\begin{DoxyCompactList}\small\item\em Returns to default Minix 3 text mode (0x03\+: 25 x 80, 16 colors) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Functions related to graphics card. 
+
+\subsection{Function Documentation}
+\hypertarget{group__video__gr_ga8d61f47c55916ab299a43f7fd799d04d}{}\index{video\+\_\+gr@{video\+\_\+gr}!vg\+\_\+draw\+\_\+pixmap@{vg\+\_\+draw\+\_\+pixmap}}
+\index{vg\+\_\+draw\+\_\+pixmap@{vg\+\_\+draw\+\_\+pixmap}!video\+\_\+gr@{video\+\_\+gr}}
+\subsubsection[{vg\+\_\+draw\+\_\+pixmap(unsigned short xi, unsigned short yi, unsigned short height, unsigned short width, char $\ast$pixmap, char $\ast$video\+\_\+mem)}]{\setlength{\rightskip}{0pt plus 5cm}int vg\+\_\+draw\+\_\+pixmap (
+\begin{DoxyParamCaption}
+\item[{unsigned short}]{xi, }
+\item[{unsigned short}]{yi, }
+\item[{unsigned short}]{height, }
+\item[{unsigned short}]{width, }
+\item[{char $\ast$}]{pixmap, }
+\item[{char $\ast$}]{video\+\_\+mem}
+\end{DoxyParamCaption}
+)}\label{group__video__gr_ga8d61f47c55916ab299a43f7fd799d04d}
+
+
+Draws a pixmap on the given buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xi} & coordinate of the pixmap. \\
+\hline
+{\em yi} & coordinate of the pixmap. \\
+\hline
+{\em height} & height of the pixmap. \\
+\hline
+{\em width} & width of the pixmap. \\
+\hline
+{\em pixmap} & pointer to the pixmap to draw. \\
+\hline
+{\em video\+\_\+mem} & pointer to the buffer to draw in. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the sprites fits in the buffer. 1 if not. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+% FIG 0
+
+
+\hypertarget{group__video__gr_ga42f593e6656f1a978315aff02b1bcebf}{}\index{video\+\_\+gr@{video\+\_\+gr}!vg\+\_\+exit@{vg\+\_\+exit}}
+\index{vg\+\_\+exit@{vg\+\_\+exit}!video\+\_\+gr@{video\+\_\+gr}}
+\subsubsection[{vg\+\_\+exit(void)}]{\setlength{\rightskip}{0pt plus 5cm}int vg\+\_\+exit (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{group__video__gr_ga42f593e6656f1a978315aff02b1bcebf}
+
+
+Returns to default Minix 3 text mode (0x03\+: 25 x 80, 16 colors) 
+
+\begin{DoxyReturn}{Returns}
+0 upon success, non-\/zero upon failure 
+\end{DoxyReturn}
+\hypertarget{group__video__gr_gacef21667c79365d57a084bed994c2189}{}\index{video\+\_\+gr@{video\+\_\+gr}!vg\+\_\+init@{vg\+\_\+init}}
+\index{vg\+\_\+init@{vg\+\_\+init}!video\+\_\+gr@{video\+\_\+gr}}
+\subsubsection[{vg\+\_\+init(unsigned short mode)}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ vg\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{unsigned short}]{mode}
+\end{DoxyParamCaption}
+)}\label{group__video__gr_gacef21667c79365d57a084bed994c2189}
+
+
+Initializes the video module in graphics mode. 
+
+Uses the V\+B\+E I\+N\+T 0x10 interface to set the desired graphics mode, maps V\+R\+A\+M to the process\textquotesingle{} address space and initializes static global variables with the resolution of the screen, and the number of colors
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & 16-\/bit V\+B\+E mode to set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Virtual address V\+R\+A\+M was mapped to. N\+U\+L\+L, upon failure. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\+:
+% FIG 1
+
+

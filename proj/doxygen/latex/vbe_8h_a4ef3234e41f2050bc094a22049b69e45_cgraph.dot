@@ -1,0 +1,13 @@
+digraph "vbe_get_mode_info"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="vbe_get_mode_info",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="lm_init",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__lmlib.html#ga00a9c17c01e794a6bfc80fc5c6ab1ed1",tooltip="Initializes the low memory area, the region up to the 1 MByte physical address, by mapping it on the ..."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="lm_alloc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__lmlib.html#gae45d971ce2ffcf4dc2677eba033a92cd",tooltip="Allocates a memory block in low memory area with the specified size. "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="lm_free",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__lmlib.html#ga73e89d9c297b7390021fb545513579c6",tooltip="Frees a memory block in the low memory area, previously allocated using lm_alloc() ..."];
+}

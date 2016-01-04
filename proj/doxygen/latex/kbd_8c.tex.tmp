@@ -1,0 +1,45 @@
+\hypertarget{kbd_8c}{}\section{proj 3.0/kbd.c File Reference}
+\label{kbd_8c}\index{proj 3.\+0/kbd.\+c@{proj 3.\+0/kbd.\+c}}
+{\ttfamily \#include $<$minix/syslib.\+h$>$}\\*
+{\ttfamily \#include $<$minix/drivers.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$math.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}constants.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}kbd.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{group__kbd_ga77e2ed8f53e0fae3f4005fa26c6d2692}{kbd\+\_\+subscribe\+\_\+int} ()
+\begin{DoxyCompactList}\small\item\em Subscribes to the keyboard\textquotesingle{}s interrupts. \end{DoxyCompactList}\item 
+int \hyperlink{kbd_8c_a5bdf6cfb570c375192b0d87913b65c57}{kbd\+\_\+unsubscribe\+\_\+int} ()
+\item 
+int \hyperlink{group__kbd_ga76c3491bce9f85cce38e6af329b94d15}{kbd\+\_\+int\+\_\+handler} ()
+\begin{DoxyCompactList}\small\item\em Unsubscribes from the keyboard\textquotesingle{}s interrupts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{kbd_8c_a74708534432e98d4ab30ba40e2e5dcc3}{kbd\+\_\+hook\+\_\+id} = 1
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{kbd_8c_a5bdf6cfb570c375192b0d87913b65c57}{}\index{kbd.\+c@{kbd.\+c}!kbd\+\_\+unsubscribe\+\_\+int@{kbd\+\_\+unsubscribe\+\_\+int}}
+\index{kbd\+\_\+unsubscribe\+\_\+int@{kbd\+\_\+unsubscribe\+\_\+int}!kbd.\+c@{kbd.\+c}}
+\subsubsection[{kbd\+\_\+unsubscribe\+\_\+int()}]{\setlength{\rightskip}{0pt plus 5cm}int kbd\+\_\+unsubscribe\+\_\+int (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{kbd_8c_a5bdf6cfb570c375192b0d87913b65c57}
+
+
+Here is the caller graph for this function\+:
+% FIG 0
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{kbd_8c_a74708534432e98d4ab30ba40e2e5dcc3}{}\index{kbd.\+c@{kbd.\+c}!kbd\+\_\+hook\+\_\+id@{kbd\+\_\+hook\+\_\+id}}
+\index{kbd\+\_\+hook\+\_\+id@{kbd\+\_\+hook\+\_\+id}!kbd.\+c@{kbd.\+c}}
+\subsubsection[{kbd\+\_\+hook\+\_\+id}]{\setlength{\rightskip}{0pt plus 5cm}int kbd\+\_\+hook\+\_\+id = 1}\label{kbd_8c_a74708534432e98d4ab30ba40e2e5dcc3}

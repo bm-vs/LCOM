@@ -1,0 +1,256 @@
+\hypertarget{game_8c}{}\section{proj 3.0/game.c File Reference}
+\label{game_8c}\index{proj 3.\+0/game.\+c@{proj 3.\+0/game.\+c}}
+{\ttfamily \#include \char`\"{}game.\+h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{game_8c_af83d1d6d43a5093529db16c2ecbdde3f}{S\+H\+O\+T\+\_\+\+S\+P\+E\+E\+D}~20
+\item 
+\#define \hyperlink{game_8c_ac5193b83ec062e73f804cb5360049e60}{T\+I\+M\+E\+\_\+\+B\+T\+W\+\_\+\+S\+H\+O\+T\+S}~15
+\item 
+\#define \hyperlink{game_8c_a25bf7d192fdb8d223cfa9fe517f117a6}{P\+L\+A\+T\+F\+O\+R\+M1\+\_\+\+X}~0
+\item 
+\#define \hyperlink{game_8c_a1cf11c304672c6015468bc94b49e66f5}{P\+L\+A\+T\+F\+O\+R\+M1\+\_\+\+Y}~600
+\item 
+\#define \hyperlink{game_8c_a54867d2b5c64aa923defb672a02fb1c9}{P\+L\+A\+T\+F\+O\+R\+M2\+\_\+\+X}~723
+\item 
+\#define \hyperlink{game_8c_a9f585b5d0b02d602e3bdbb92a8b7293a}{P\+L\+A\+T\+F\+O\+R\+M2\+\_\+\+Y}~600
+\item 
+\#define \hyperlink{game_8c_a5a7bced18849e3ba56b4790bac83b9aa}{P\+L\+A\+T\+F\+O\+R\+M3\+\_\+\+X}~361
+\item 
+\#define \hyperlink{game_8c_ac38ba61fcb3a9192b41942e59bfd20e8}{P\+L\+A\+T\+F\+O\+R\+M3\+\_\+\+Y}~432
+\item 
+\#define \hyperlink{game_8c_a932412cd1477cf08389da81f803f2b9a}{P\+L\+A\+T\+F\+O\+R\+M4\+\_\+\+X}~0
+\item 
+\#define \hyperlink{game_8c_ac68cae5df3456706c42db1131ec85b09}{P\+L\+A\+T\+F\+O\+R\+M4\+\_\+\+Y}~264
+\item 
+\#define \hyperlink{game_8c_a04cdb8bedc0b5dddc206fe7db93f664c}{P\+L\+A\+T\+F\+O\+R\+M5\+\_\+\+X}~723
+\item 
+\#define \hyperlink{game_8c_ace72ea230d851f68b75f463fc04f3583}{P\+L\+A\+T\+F\+O\+R\+M5\+\_\+\+Y}~264
+\item 
+\#define \hyperlink{game_8c_a30a894474cca8d65d1a2cecfeee7d33c}{P\+L\+A\+Y\+E\+R1\+\_\+\+S\+T\+A\+R\+T\+\_\+\+X}~300
+\item 
+\#define \hyperlink{game_8c_a498e520b6e1a8ca9f723f3eab8b516f9}{P\+L\+A\+Y\+E\+R1\+\_\+\+S\+T\+A\+R\+T\+\_\+\+Y}~708
+\item 
+\#define \hyperlink{game_8c_a0d169a79b84a25ea254dd3271b338d8d}{P\+L\+A\+Y\+E\+R2\+\_\+\+S\+T\+A\+R\+T\+\_\+\+X}~800
+\item 
+\#define \hyperlink{game_8c_ad5bc522b8e14233b149d8aa98eb65828}{P\+L\+A\+Y\+E\+R2\+\_\+\+S\+T\+A\+R\+T\+\_\+\+Y}~200
+\item 
+\#define \hyperlink{game_8c_a3f40f5a7c5431fd51677042f2bb40ba2}{C\+R\+O\+S\+S\+H\+A\+I\+R1\+\_\+\+S\+T\+A\+R\+T\+\_\+\+X}~300
+\item 
+\#define \hyperlink{game_8c_af36d176aa69dd007e157ac5269bc77f3}{C\+R\+O\+S\+S\+H\+A\+I\+R1\+\_\+\+S\+T\+A\+R\+T\+\_\+\+Y}~700
+\item 
+\#define \hyperlink{game_8c_af49bad41acef45feb40939c0cf9d5d35}{P\+L\+A\+Y\+E\+R\+\_\+\+S\+P\+E\+E\+D}~7
+\item 
+\#define \hyperlink{game_8c_abc7556ca8fd1db5c1b2e2c0b0cdb533b}{J\+U\+M\+P\+\_\+\+S\+P\+E\+E\+D}~-\/15
+\item 
+\#define \hyperlink{game_8c_ab79bf1ced3b25083a255fb0748b0b31c}{P\+L\+A\+Y\+E\+R\+\_\+\+H\+P}~5
+\item 
+\#define \hyperlink{game_8c_a8ea6f3b5cc9fd7066e8d2a2d32c383b2}{H\+P\+\_\+\+X}~900
+\item 
+\#define \hyperlink{game_8c_a93876137e9825afddd3d611fe9ad19b3}{H\+P\+\_\+\+Y}~50
+\item 
+\#define \hyperlink{game_8c_a8c4303867f9a40e3a4c9ccfa8d134105}{T\+I\+M\+E\+\_\+\+X}~127
+\item 
+\#define \hyperlink{game_8c_a3ac99fa0ea0a4bbe9bc81466371aa83b}{T\+I\+M\+E\+\_\+\+Y}~50
+\item 
+\#define \hyperlink{game_8c_a5ea5b365243b5c0c86b2bf0d135fee69}{N\+\_\+\+S\+E\+C\+\_\+\+W\+I\+N}~3
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{game_8c_a860a3ff149bb616ec2242dc34bb52b51}{game} (char $\ast$video\+\_\+mem, int player, int time\+\_\+other\+\_\+player)
+\begin{DoxyCompactList}\small\item\em Primary game function. \end{DoxyCompactList}\item 
+int \hyperlink{game_8c_a792d3a7c31488479811f72b787f85e4d}{menu} (char $\ast$video\+\_\+mem)
+\begin{DoxyCompactList}\small\item\em Function for displaying the menu. \end{DoxyCompactList}\item 
+void \hyperlink{game_8c_a8273bb9d5ec414429bd897d7c95a1303}{player\+\_\+wins} (char $\ast$video\+\_\+mem, int player)
+\begin{DoxyCompactList}\small\item\em Function for displaying the winner of the game. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{game_8c_a3f40f5a7c5431fd51677042f2bb40ba2}{}\index{game.\+c@{game.\+c}!C\+R\+O\+S\+S\+H\+A\+I\+R1\+\_\+\+S\+T\+A\+R\+T\+\_\+\+X@{C\+R\+O\+S\+S\+H\+A\+I\+R1\+\_\+\+S\+T\+A\+R\+T\+\_\+\+X}}
+\index{C\+R\+O\+S\+S\+H\+A\+I\+R1\+\_\+\+S\+T\+A\+R\+T\+\_\+\+X@{C\+R\+O\+S\+S\+H\+A\+I\+R1\+\_\+\+S\+T\+A\+R\+T\+\_\+\+X}!game.\+c@{game.\+c}}
+\subsubsection[{C\+R\+O\+S\+S\+H\+A\+I\+R1\+\_\+\+S\+T\+A\+R\+T\+\_\+\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+O\+S\+S\+H\+A\+I\+R1\+\_\+\+S\+T\+A\+R\+T\+\_\+\+X~300}\label{game_8c_a3f40f5a7c5431fd51677042f2bb40ba2}
+\hypertarget{game_8c_af36d176aa69dd007e157ac5269bc77f3}{}\index{game.\+c@{game.\+c}!C\+R\+O\+S\+S\+H\+A\+I\+R1\+\_\+\+S\+T\+A\+R\+T\+\_\+\+Y@{C\+R\+O\+S\+S\+H\+A\+I\+R1\+\_\+\+S\+T\+A\+R\+T\+\_\+\+Y}}
+\index{C\+R\+O\+S\+S\+H\+A\+I\+R1\+\_\+\+S\+T\+A\+R\+T\+\_\+\+Y@{C\+R\+O\+S\+S\+H\+A\+I\+R1\+\_\+\+S\+T\+A\+R\+T\+\_\+\+Y}!game.\+c@{game.\+c}}
+\subsubsection[{C\+R\+O\+S\+S\+H\+A\+I\+R1\+\_\+\+S\+T\+A\+R\+T\+\_\+\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+O\+S\+S\+H\+A\+I\+R1\+\_\+\+S\+T\+A\+R\+T\+\_\+\+Y~700}\label{game_8c_af36d176aa69dd007e157ac5269bc77f3}
+\hypertarget{game_8c_a8ea6f3b5cc9fd7066e8d2a2d32c383b2}{}\index{game.\+c@{game.\+c}!H\+P\+\_\+\+X@{H\+P\+\_\+\+X}}
+\index{H\+P\+\_\+\+X@{H\+P\+\_\+\+X}!game.\+c@{game.\+c}}
+\subsubsection[{H\+P\+\_\+\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\+P\+\_\+\+X~900}\label{game_8c_a8ea6f3b5cc9fd7066e8d2a2d32c383b2}
+\hypertarget{game_8c_a93876137e9825afddd3d611fe9ad19b3}{}\index{game.\+c@{game.\+c}!H\+P\+\_\+\+Y@{H\+P\+\_\+\+Y}}
+\index{H\+P\+\_\+\+Y@{H\+P\+\_\+\+Y}!game.\+c@{game.\+c}}
+\subsubsection[{H\+P\+\_\+\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\+P\+\_\+\+Y~50}\label{game_8c_a93876137e9825afddd3d611fe9ad19b3}
+\hypertarget{game_8c_abc7556ca8fd1db5c1b2e2c0b0cdb533b}{}\index{game.\+c@{game.\+c}!J\+U\+M\+P\+\_\+\+S\+P\+E\+E\+D@{J\+U\+M\+P\+\_\+\+S\+P\+E\+E\+D}}
+\index{J\+U\+M\+P\+\_\+\+S\+P\+E\+E\+D@{J\+U\+M\+P\+\_\+\+S\+P\+E\+E\+D}!game.\+c@{game.\+c}}
+\subsubsection[{J\+U\+M\+P\+\_\+\+S\+P\+E\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define J\+U\+M\+P\+\_\+\+S\+P\+E\+E\+D~-\/15}\label{game_8c_abc7556ca8fd1db5c1b2e2c0b0cdb533b}
+\hypertarget{game_8c_a5ea5b365243b5c0c86b2bf0d135fee69}{}\index{game.\+c@{game.\+c}!N\+\_\+\+S\+E\+C\+\_\+\+W\+I\+N@{N\+\_\+\+S\+E\+C\+\_\+\+W\+I\+N}}
+\index{N\+\_\+\+S\+E\+C\+\_\+\+W\+I\+N@{N\+\_\+\+S\+E\+C\+\_\+\+W\+I\+N}!game.\+c@{game.\+c}}
+\subsubsection[{N\+\_\+\+S\+E\+C\+\_\+\+W\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\+\_\+\+S\+E\+C\+\_\+\+W\+I\+N~3}\label{game_8c_a5ea5b365243b5c0c86b2bf0d135fee69}
+\hypertarget{game_8c_a25bf7d192fdb8d223cfa9fe517f117a6}{}\index{game.\+c@{game.\+c}!P\+L\+A\+T\+F\+O\+R\+M1\+\_\+\+X@{P\+L\+A\+T\+F\+O\+R\+M1\+\_\+\+X}}
+\index{P\+L\+A\+T\+F\+O\+R\+M1\+\_\+\+X@{P\+L\+A\+T\+F\+O\+R\+M1\+\_\+\+X}!game.\+c@{game.\+c}}
+\subsubsection[{P\+L\+A\+T\+F\+O\+R\+M1\+\_\+\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+L\+A\+T\+F\+O\+R\+M1\+\_\+\+X~0}\label{game_8c_a25bf7d192fdb8d223cfa9fe517f117a6}
+\hypertarget{game_8c_a1cf11c304672c6015468bc94b49e66f5}{}\index{game.\+c@{game.\+c}!P\+L\+A\+T\+F\+O\+R\+M1\+\_\+\+Y@{P\+L\+A\+T\+F\+O\+R\+M1\+\_\+\+Y}}
+\index{P\+L\+A\+T\+F\+O\+R\+M1\+\_\+\+Y@{P\+L\+A\+T\+F\+O\+R\+M1\+\_\+\+Y}!game.\+c@{game.\+c}}
+\subsubsection[{P\+L\+A\+T\+F\+O\+R\+M1\+\_\+\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+L\+A\+T\+F\+O\+R\+M1\+\_\+\+Y~600}\label{game_8c_a1cf11c304672c6015468bc94b49e66f5}
+\hypertarget{game_8c_a54867d2b5c64aa923defb672a02fb1c9}{}\index{game.\+c@{game.\+c}!P\+L\+A\+T\+F\+O\+R\+M2\+\_\+\+X@{P\+L\+A\+T\+F\+O\+R\+M2\+\_\+\+X}}
+\index{P\+L\+A\+T\+F\+O\+R\+M2\+\_\+\+X@{P\+L\+A\+T\+F\+O\+R\+M2\+\_\+\+X}!game.\+c@{game.\+c}}
+\subsubsection[{P\+L\+A\+T\+F\+O\+R\+M2\+\_\+\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+L\+A\+T\+F\+O\+R\+M2\+\_\+\+X~723}\label{game_8c_a54867d2b5c64aa923defb672a02fb1c9}
+\hypertarget{game_8c_a9f585b5d0b02d602e3bdbb92a8b7293a}{}\index{game.\+c@{game.\+c}!P\+L\+A\+T\+F\+O\+R\+M2\+\_\+\+Y@{P\+L\+A\+T\+F\+O\+R\+M2\+\_\+\+Y}}
+\index{P\+L\+A\+T\+F\+O\+R\+M2\+\_\+\+Y@{P\+L\+A\+T\+F\+O\+R\+M2\+\_\+\+Y}!game.\+c@{game.\+c}}
+\subsubsection[{P\+L\+A\+T\+F\+O\+R\+M2\+\_\+\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+L\+A\+T\+F\+O\+R\+M2\+\_\+\+Y~600}\label{game_8c_a9f585b5d0b02d602e3bdbb92a8b7293a}
+\hypertarget{game_8c_a5a7bced18849e3ba56b4790bac83b9aa}{}\index{game.\+c@{game.\+c}!P\+L\+A\+T\+F\+O\+R\+M3\+\_\+\+X@{P\+L\+A\+T\+F\+O\+R\+M3\+\_\+\+X}}
+\index{P\+L\+A\+T\+F\+O\+R\+M3\+\_\+\+X@{P\+L\+A\+T\+F\+O\+R\+M3\+\_\+\+X}!game.\+c@{game.\+c}}
+\subsubsection[{P\+L\+A\+T\+F\+O\+R\+M3\+\_\+\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+L\+A\+T\+F\+O\+R\+M3\+\_\+\+X~361}\label{game_8c_a5a7bced18849e3ba56b4790bac83b9aa}
+\hypertarget{game_8c_ac38ba61fcb3a9192b41942e59bfd20e8}{}\index{game.\+c@{game.\+c}!P\+L\+A\+T\+F\+O\+R\+M3\+\_\+\+Y@{P\+L\+A\+T\+F\+O\+R\+M3\+\_\+\+Y}}
+\index{P\+L\+A\+T\+F\+O\+R\+M3\+\_\+\+Y@{P\+L\+A\+T\+F\+O\+R\+M3\+\_\+\+Y}!game.\+c@{game.\+c}}
+\subsubsection[{P\+L\+A\+T\+F\+O\+R\+M3\+\_\+\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+L\+A\+T\+F\+O\+R\+M3\+\_\+\+Y~432}\label{game_8c_ac38ba61fcb3a9192b41942e59bfd20e8}
+\hypertarget{game_8c_a932412cd1477cf08389da81f803f2b9a}{}\index{game.\+c@{game.\+c}!P\+L\+A\+T\+F\+O\+R\+M4\+\_\+\+X@{P\+L\+A\+T\+F\+O\+R\+M4\+\_\+\+X}}
+\index{P\+L\+A\+T\+F\+O\+R\+M4\+\_\+\+X@{P\+L\+A\+T\+F\+O\+R\+M4\+\_\+\+X}!game.\+c@{game.\+c}}
+\subsubsection[{P\+L\+A\+T\+F\+O\+R\+M4\+\_\+\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+L\+A\+T\+F\+O\+R\+M4\+\_\+\+X~0}\label{game_8c_a932412cd1477cf08389da81f803f2b9a}
+\hypertarget{game_8c_ac68cae5df3456706c42db1131ec85b09}{}\index{game.\+c@{game.\+c}!P\+L\+A\+T\+F\+O\+R\+M4\+\_\+\+Y@{P\+L\+A\+T\+F\+O\+R\+M4\+\_\+\+Y}}
+\index{P\+L\+A\+T\+F\+O\+R\+M4\+\_\+\+Y@{P\+L\+A\+T\+F\+O\+R\+M4\+\_\+\+Y}!game.\+c@{game.\+c}}
+\subsubsection[{P\+L\+A\+T\+F\+O\+R\+M4\+\_\+\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+L\+A\+T\+F\+O\+R\+M4\+\_\+\+Y~264}\label{game_8c_ac68cae5df3456706c42db1131ec85b09}
+\hypertarget{game_8c_a04cdb8bedc0b5dddc206fe7db93f664c}{}\index{game.\+c@{game.\+c}!P\+L\+A\+T\+F\+O\+R\+M5\+\_\+\+X@{P\+L\+A\+T\+F\+O\+R\+M5\+\_\+\+X}}
+\index{P\+L\+A\+T\+F\+O\+R\+M5\+\_\+\+X@{P\+L\+A\+T\+F\+O\+R\+M5\+\_\+\+X}!game.\+c@{game.\+c}}
+\subsubsection[{P\+L\+A\+T\+F\+O\+R\+M5\+\_\+\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+L\+A\+T\+F\+O\+R\+M5\+\_\+\+X~723}\label{game_8c_a04cdb8bedc0b5dddc206fe7db93f664c}
+\hypertarget{game_8c_ace72ea230d851f68b75f463fc04f3583}{}\index{game.\+c@{game.\+c}!P\+L\+A\+T\+F\+O\+R\+M5\+\_\+\+Y@{P\+L\+A\+T\+F\+O\+R\+M5\+\_\+\+Y}}
+\index{P\+L\+A\+T\+F\+O\+R\+M5\+\_\+\+Y@{P\+L\+A\+T\+F\+O\+R\+M5\+\_\+\+Y}!game.\+c@{game.\+c}}
+\subsubsection[{P\+L\+A\+T\+F\+O\+R\+M5\+\_\+\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+L\+A\+T\+F\+O\+R\+M5\+\_\+\+Y~264}\label{game_8c_ace72ea230d851f68b75f463fc04f3583}
+\hypertarget{game_8c_a30a894474cca8d65d1a2cecfeee7d33c}{}\index{game.\+c@{game.\+c}!P\+L\+A\+Y\+E\+R1\+\_\+\+S\+T\+A\+R\+T\+\_\+\+X@{P\+L\+A\+Y\+E\+R1\+\_\+\+S\+T\+A\+R\+T\+\_\+\+X}}
+\index{P\+L\+A\+Y\+E\+R1\+\_\+\+S\+T\+A\+R\+T\+\_\+\+X@{P\+L\+A\+Y\+E\+R1\+\_\+\+S\+T\+A\+R\+T\+\_\+\+X}!game.\+c@{game.\+c}}
+\subsubsection[{P\+L\+A\+Y\+E\+R1\+\_\+\+S\+T\+A\+R\+T\+\_\+\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+L\+A\+Y\+E\+R1\+\_\+\+S\+T\+A\+R\+T\+\_\+\+X~300}\label{game_8c_a30a894474cca8d65d1a2cecfeee7d33c}
+\hypertarget{game_8c_a498e520b6e1a8ca9f723f3eab8b516f9}{}\index{game.\+c@{game.\+c}!P\+L\+A\+Y\+E\+R1\+\_\+\+S\+T\+A\+R\+T\+\_\+\+Y@{P\+L\+A\+Y\+E\+R1\+\_\+\+S\+T\+A\+R\+T\+\_\+\+Y}}
+\index{P\+L\+A\+Y\+E\+R1\+\_\+\+S\+T\+A\+R\+T\+\_\+\+Y@{P\+L\+A\+Y\+E\+R1\+\_\+\+S\+T\+A\+R\+T\+\_\+\+Y}!game.\+c@{game.\+c}}
+\subsubsection[{P\+L\+A\+Y\+E\+R1\+\_\+\+S\+T\+A\+R\+T\+\_\+\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+L\+A\+Y\+E\+R1\+\_\+\+S\+T\+A\+R\+T\+\_\+\+Y~708}\label{game_8c_a498e520b6e1a8ca9f723f3eab8b516f9}
+\hypertarget{game_8c_a0d169a79b84a25ea254dd3271b338d8d}{}\index{game.\+c@{game.\+c}!P\+L\+A\+Y\+E\+R2\+\_\+\+S\+T\+A\+R\+T\+\_\+\+X@{P\+L\+A\+Y\+E\+R2\+\_\+\+S\+T\+A\+R\+T\+\_\+\+X}}
+\index{P\+L\+A\+Y\+E\+R2\+\_\+\+S\+T\+A\+R\+T\+\_\+\+X@{P\+L\+A\+Y\+E\+R2\+\_\+\+S\+T\+A\+R\+T\+\_\+\+X}!game.\+c@{game.\+c}}
+\subsubsection[{P\+L\+A\+Y\+E\+R2\+\_\+\+S\+T\+A\+R\+T\+\_\+\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+L\+A\+Y\+E\+R2\+\_\+\+S\+T\+A\+R\+T\+\_\+\+X~800}\label{game_8c_a0d169a79b84a25ea254dd3271b338d8d}
+\hypertarget{game_8c_ad5bc522b8e14233b149d8aa98eb65828}{}\index{game.\+c@{game.\+c}!P\+L\+A\+Y\+E\+R2\+\_\+\+S\+T\+A\+R\+T\+\_\+\+Y@{P\+L\+A\+Y\+E\+R2\+\_\+\+S\+T\+A\+R\+T\+\_\+\+Y}}
+\index{P\+L\+A\+Y\+E\+R2\+\_\+\+S\+T\+A\+R\+T\+\_\+\+Y@{P\+L\+A\+Y\+E\+R2\+\_\+\+S\+T\+A\+R\+T\+\_\+\+Y}!game.\+c@{game.\+c}}
+\subsubsection[{P\+L\+A\+Y\+E\+R2\+\_\+\+S\+T\+A\+R\+T\+\_\+\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+L\+A\+Y\+E\+R2\+\_\+\+S\+T\+A\+R\+T\+\_\+\+Y~200}\label{game_8c_ad5bc522b8e14233b149d8aa98eb65828}
+\hypertarget{game_8c_ab79bf1ced3b25083a255fb0748b0b31c}{}\index{game.\+c@{game.\+c}!P\+L\+A\+Y\+E\+R\+\_\+\+H\+P@{P\+L\+A\+Y\+E\+R\+\_\+\+H\+P}}
+\index{P\+L\+A\+Y\+E\+R\+\_\+\+H\+P@{P\+L\+A\+Y\+E\+R\+\_\+\+H\+P}!game.\+c@{game.\+c}}
+\subsubsection[{P\+L\+A\+Y\+E\+R\+\_\+\+H\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+L\+A\+Y\+E\+R\+\_\+\+H\+P~5}\label{game_8c_ab79bf1ced3b25083a255fb0748b0b31c}
+\hypertarget{game_8c_af49bad41acef45feb40939c0cf9d5d35}{}\index{game.\+c@{game.\+c}!P\+L\+A\+Y\+E\+R\+\_\+\+S\+P\+E\+E\+D@{P\+L\+A\+Y\+E\+R\+\_\+\+S\+P\+E\+E\+D}}
+\index{P\+L\+A\+Y\+E\+R\+\_\+\+S\+P\+E\+E\+D@{P\+L\+A\+Y\+E\+R\+\_\+\+S\+P\+E\+E\+D}!game.\+c@{game.\+c}}
+\subsubsection[{P\+L\+A\+Y\+E\+R\+\_\+\+S\+P\+E\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+L\+A\+Y\+E\+R\+\_\+\+S\+P\+E\+E\+D~7}\label{game_8c_af49bad41acef45feb40939c0cf9d5d35}
+\hypertarget{game_8c_af83d1d6d43a5093529db16c2ecbdde3f}{}\index{game.\+c@{game.\+c}!S\+H\+O\+T\+\_\+\+S\+P\+E\+E\+D@{S\+H\+O\+T\+\_\+\+S\+P\+E\+E\+D}}
+\index{S\+H\+O\+T\+\_\+\+S\+P\+E\+E\+D@{S\+H\+O\+T\+\_\+\+S\+P\+E\+E\+D}!game.\+c@{game.\+c}}
+\subsubsection[{S\+H\+O\+T\+\_\+\+S\+P\+E\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+H\+O\+T\+\_\+\+S\+P\+E\+E\+D~20}\label{game_8c_af83d1d6d43a5093529db16c2ecbdde3f}
+\hypertarget{game_8c_ac5193b83ec062e73f804cb5360049e60}{}\index{game.\+c@{game.\+c}!T\+I\+M\+E\+\_\+\+B\+T\+W\+\_\+\+S\+H\+O\+T\+S@{T\+I\+M\+E\+\_\+\+B\+T\+W\+\_\+\+S\+H\+O\+T\+S}}
+\index{T\+I\+M\+E\+\_\+\+B\+T\+W\+\_\+\+S\+H\+O\+T\+S@{T\+I\+M\+E\+\_\+\+B\+T\+W\+\_\+\+S\+H\+O\+T\+S}!game.\+c@{game.\+c}}
+\subsubsection[{T\+I\+M\+E\+\_\+\+B\+T\+W\+\_\+\+S\+H\+O\+T\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+I\+M\+E\+\_\+\+B\+T\+W\+\_\+\+S\+H\+O\+T\+S~15}\label{game_8c_ac5193b83ec062e73f804cb5360049e60}
+\hypertarget{game_8c_a8c4303867f9a40e3a4c9ccfa8d134105}{}\index{game.\+c@{game.\+c}!T\+I\+M\+E\+\_\+\+X@{T\+I\+M\+E\+\_\+\+X}}
+\index{T\+I\+M\+E\+\_\+\+X@{T\+I\+M\+E\+\_\+\+X}!game.\+c@{game.\+c}}
+\subsubsection[{T\+I\+M\+E\+\_\+\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+I\+M\+E\+\_\+\+X~127}\label{game_8c_a8c4303867f9a40e3a4c9ccfa8d134105}
+\hypertarget{game_8c_a3ac99fa0ea0a4bbe9bc81466371aa83b}{}\index{game.\+c@{game.\+c}!T\+I\+M\+E\+\_\+\+Y@{T\+I\+M\+E\+\_\+\+Y}}
+\index{T\+I\+M\+E\+\_\+\+Y@{T\+I\+M\+E\+\_\+\+Y}!game.\+c@{game.\+c}}
+\subsubsection[{T\+I\+M\+E\+\_\+\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+I\+M\+E\+\_\+\+Y~50}\label{game_8c_a3ac99fa0ea0a4bbe9bc81466371aa83b}
+
+
+\subsection{Function Documentation}
+\hypertarget{game_8c_a860a3ff149bb616ec2242dc34bb52b51}{}\index{game.\+c@{game.\+c}!game@{game}}
+\index{game@{game}!game.\+c@{game.\+c}}
+\subsubsection[{game(char $\ast$video\+\_\+mem, int player, int time\+\_\+other\+\_\+player)}]{\setlength{\rightskip}{0pt plus 5cm}int game (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{video\+\_\+mem, }
+\item[{int}]{player, }
+\item[{int}]{time\+\_\+other\+\_\+player}
+\end{DoxyParamCaption}
+)}\label{game_8c_a860a3ff149bb616ec2242dc34bb52b51}
+
+
+Primary game function. 
+
+Responsible for a player\textquotesingle{}s turn. After a turn starts it lasts until who player who is running away loses all its health.
+
+
+\begin{DoxyParams}{Parameters}
+{\em video\+\_\+mem} & virtual address V\+R\+A\+M was mapped to. \\
+\hline
+{\em player} & number of the player that will shoot this turn. \\
+\hline
+{\em time\+\_\+other\+\_\+player} & time the other player took completing his turn (in ms). If no other player as completed a turn this parameter should be -\/1. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of seconds the turn took. -\/1 if the the E\+S\+C key was pressed. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\+:
+% FIG 0
+
+
+
+
+Here is the caller graph for this function\+:
+% FIG 1
+
+
+\hypertarget{game_8c_a792d3a7c31488479811f72b787f85e4d}{}\index{game.\+c@{game.\+c}!menu@{menu}}
+\index{menu@{menu}!game.\+c@{game.\+c}}
+\subsubsection[{menu(char $\ast$video\+\_\+mem)}]{\setlength{\rightskip}{0pt plus 5cm}int menu (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{video\+\_\+mem}
+\end{DoxyParamCaption}
+)}\label{game_8c_a792d3a7c31488479811f72b787f85e4d}
+
+
+Function for displaying the menu. 
+
+Responsible for displaying the menu screen and either indicate the beginning of the game or exit of the program.
+
+
+\begin{DoxyParams}{Parameters}
+{\em video\+\_\+mem} & virtual address V\+R\+A\+M was mapped to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the user chose to begin the game. -\/1 if the E\+S\+C key was pressed. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\+:
+% FIG 2
+
+
+
+
+Here is the caller graph for this function\+:
+% FIG 3
+
+
+\hypertarget{game_8c_a8273bb9d5ec414429bd897d7c95a1303}{}\index{game.\+c@{game.\+c}!player\+\_\+wins@{player\+\_\+wins}}
+\index{player\+\_\+wins@{player\+\_\+wins}!game.\+c@{game.\+c}}
+\subsubsection[{player\+\_\+wins(char $\ast$video\+\_\+mem, int player)}]{\setlength{\rightskip}{0pt plus 5cm}void player\+\_\+wins (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{video\+\_\+mem, }
+\item[{int}]{player}
+\end{DoxyParamCaption}
+)}\label{game_8c_a8273bb9d5ec414429bd897d7c95a1303}
+
+
+Function for displaying the winner of the game. 
+
+Responsible for displaying the player that took the less amount of time to complete its turn.
+
+
+\begin{DoxyParams}{Parameters}
+{\em video\+\_\+mem} & virtual address V\+R\+A\+M was mapped to. \\
+\hline
+{\em player} & number of the player that won the game. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\+:
+% FIG 4
+
+
+
+
+Here is the caller graph for this function\+:
+% FIG 5
+
+

@@ -4,7 +4,7 @@
 
 #include "xpm.h"
 
-char **get_pixmap(unsigned short xpm) {
+char **get_xpm(unsigned short xpm) {
 	char **images[N_IMAGES];
 
 	images[0] = shot;

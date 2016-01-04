@@ -1,0 +1,31 @@
+\hypertarget{mouse_8c}{}\section{proj 3.0/mouse.c File Reference}
+\label{mouse_8c}\index{proj 3.\+0/mouse.\+c@{proj 3.\+0/mouse.\+c}}
+{\ttfamily \#include \char`\"{}mouse.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{group__mouse_ga99506573209b197b84ee22a228b89fbd}{mouse\+\_\+subscribe\+\_\+int} ()
+\begin{DoxyCompactList}\small\item\em Subscribes to the mouse\textquotesingle{}s interrupts. \end{DoxyCompactList}\item 
+int \hyperlink{group__mouse_ga685ad2706aca36d9869a30a19b9f446a}{mouse\+\_\+unsubscribe\+\_\+int} ()
+\begin{DoxyCompactList}\small\item\em Unsubscribes from the mouse\textquotesingle{}s interrupts. \end{DoxyCompactList}\item 
+int \hyperlink{group__mouse_ga16a521d1919cbd8f434d8b5d535a639b}{mouse\+\_\+set\+\_\+stream\+\_\+mode} ()
+\begin{DoxyCompactList}\small\item\em Sends the Set Stream Mode command to port 0x64. \end{DoxyCompactList}\item 
+int \hyperlink{group__mouse_ga6d00dfd9c62a4446f67caea39b64d463}{mouse\+\_\+enable\+\_\+stream} ()
+\begin{DoxyCompactList}\small\item\em Sends the Enable Sending Data Packets command to port 0x64. \end{DoxyCompactList}\item 
+int \hyperlink{group__mouse_gaff2fd99bd9285fa0fc166788f9cc7569}{mouse\+\_\+status\+\_\+request} ()
+\begin{DoxyCompactList}\small\item\em Sends the Status Request command to port 0x64. \end{DoxyCompactList}\item 
+long \hyperlink{group__mouse_ga59b282691a2a3edde462f7b36351a74a}{get\+\_\+byte} ()
+\begin{DoxyCompactList}\small\item\em Receives the data in port 0x60. \end{DoxyCompactList}\item 
+int \hyperlink{group__mouse_ga04bd9f2c1818e56a4604e290a068842b}{packet\+\_\+handler} (char data\+\_\+packet\mbox{[}$\,$\mbox{]}, \hyperlink{struct_sprite}{Sprite} $\ast$sprite, char $\ast$video\+\_\+mem)
+\begin{DoxyCompactList}\small\item\em Receives a mouse data packet and updates the sprite\textquotesingle{}s coordinates accordingly. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{mouse_8c_a37cad7cad93664f8a1ed1b0258fe958b}{mouse\+\_\+hook\+\_\+id} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Variable Documentation}
+\hypertarget{mouse_8c_a37cad7cad93664f8a1ed1b0258fe958b}{}\index{mouse.\+c@{mouse.\+c}!mouse\+\_\+hook\+\_\+id@{mouse\+\_\+hook\+\_\+id}}
+\index{mouse\+\_\+hook\+\_\+id@{mouse\+\_\+hook\+\_\+id}!mouse.\+c@{mouse.\+c}}
+\subsubsection[{mouse\+\_\+hook\+\_\+id}]{\setlength{\rightskip}{0pt plus 5cm}int mouse\+\_\+hook\+\_\+id = 0}\label{mouse_8c_a37cad7cad93664f8a1ed1b0258fe958b}

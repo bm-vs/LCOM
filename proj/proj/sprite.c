@@ -34,9 +34,6 @@ int draw_sprite(Sprite *sp, char *video_mem) {
 	return vg_draw_pixmap(sp->x, sp->y, sp->height, sp->width, sp->map, video_mem);
 }
 
-void erase_sprite(Sprite *sp, char *video_mem) {
-	vg_erase_pixmap(sp->x, sp->y, sp->height, sp->width, sp->map, video_mem);
-}
 
 int move_sprite(Sprite *sp, unsigned short h_res, unsigned short v_res, char *video_mem) {
 	// Check if sprite can be moved

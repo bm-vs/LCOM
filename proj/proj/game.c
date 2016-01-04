@@ -50,31 +50,31 @@ int game(char *video_mem, int player, int time_other_player) {
 	double_buffer = malloc(H_RES*V_RES);
 	mouse_buffer = malloc(H_RES*V_RES);
 
-	Sprite *platform1 = create_sprite(get_pixmap(2), PLATFORM1_X, PLATFORM1_Y);
+	Sprite *platform1 = create_sprite(get_xpm(2), PLATFORM1_X, PLATFORM1_Y);
 	draw_sprite(platform1, double_buffer);
 
-	Sprite *platform2 = create_sprite(get_pixmap(2), PLATFORM2_X, PLATFORM2_Y);
+	Sprite *platform2 = create_sprite(get_xpm(2), PLATFORM2_X, PLATFORM2_Y);
 	draw_sprite(platform2, double_buffer);
 
-	Sprite *platform3 = create_sprite(get_pixmap(2), PLATFORM3_X, PLATFORM3_Y);
+	Sprite *platform3 = create_sprite(get_xpm(2), PLATFORM3_X, PLATFORM3_Y);
 	draw_sprite(platform3, double_buffer);
 
-	Sprite *platform4 = create_sprite(get_pixmap(2), PLATFORM4_X, PLATFORM4_Y);
+	Sprite *platform4 = create_sprite(get_xpm(2), PLATFORM4_X, PLATFORM4_Y);
 	draw_sprite(platform4, double_buffer);
 
-	Sprite *platform5 = create_sprite(get_pixmap(2), PLATFORM5_X, PLATFORM5_Y);
+	Sprite *platform5 = create_sprite(get_xpm(2), PLATFORM5_X, PLATFORM5_Y);
 	draw_sprite(platform5, double_buffer);
 
 	Sprite *player1;
 	Sprite *player2;
 
 	if (player == 1) {
-		player1 = create_sprite(get_pixmap(4), PLAYER1_START_X, PLAYER1_START_Y);
-		player2 = create_sprite(get_pixmap(5), PLAYER2_START_X, PLAYER2_START_Y);
+		player1 = create_sprite(get_xpm(4), PLAYER1_START_X, PLAYER1_START_Y);
+		player2 = create_sprite(get_xpm(5), PLAYER2_START_X, PLAYER2_START_Y);
 	}
 	else {
-		player1 = create_sprite(get_pixmap(5), PLAYER1_START_X, PLAYER1_START_Y);
-		player2 = create_sprite(get_pixmap(4), PLAYER2_START_X, PLAYER2_START_Y);
+		player1 = create_sprite(get_xpm(5), PLAYER1_START_X, PLAYER1_START_Y);
+		player2 = create_sprite(get_xpm(4), PLAYER2_START_X, PLAYER2_START_Y);
 	}
 
 	draw_sprite(player1, double_buffer);
@@ -86,7 +86,7 @@ int game(char *video_mem, int player, int time_other_player) {
 	player2->inplatform = 1;
 
 
-	Sprite *crosshair = create_sprite(get_pixmap(1), CROSSHAIR1_START_X, CROSSHAIR1_START_Y);
+	Sprite *crosshair = create_sprite(get_xpm(1), CROSSHAIR1_START_X, CROSSHAIR1_START_Y);
 	draw_sprite(crosshair, mouse_buffer);
 	memcpy(video_mem, mouse_buffer, H_RES*V_RES);
 
@@ -178,14 +178,14 @@ int game(char *video_mem, int player, int time_other_player) {
 
 					// Draw player hp
 					for (i = 0; i < player_hp; i++) {
-						Sprite *hp = create_sprite(get_pixmap(6), HP_X - 42*i, HP_Y);
+						Sprite *hp = create_sprite(get_xpm(6), HP_X - 42*i, HP_Y);
 						draw_sprite(hp, mouse_buffer);
 						destroy_sprite(hp);
 					}
 
 					if (time_other_player/60 < 228 && time_other_player != -1) {
 						for (i = 0; i < time_other_player/60; i++) {
-							Sprite *time_bar_other = create_sprite(get_pixmap(15), TIME_X + 3*i, TIME_Y);
+							Sprite *time_bar_other = create_sprite(get_xpm(15), TIME_X + 3*i, TIME_Y);
 							draw_sprite(time_bar_other, mouse_buffer);
 							destroy_sprite(time_bar_other);
 						}
@@ -193,7 +193,7 @@ int game(char *video_mem, int player, int time_other_player) {
 
 					if (counter/60 < 228) {
 						for (i = 0; i < counter/60; i++) {
-							Sprite *time_bar = create_sprite(get_pixmap(14), TIME_X + 3*i, TIME_Y);
+							Sprite *time_bar = create_sprite(get_xpm(14), TIME_X + 3*i, TIME_Y);
 							draw_sprite(time_bar, mouse_buffer);
 							destroy_sprite(time_bar);
 						}
@@ -383,7 +383,7 @@ int game(char *video_mem, int player, int time_other_player) {
 							n_packets++;
 							if ((packet_handler(data_packet, crosshair, mouse_buffer) == 1)  &&
 									(counter - last_shot >= TIME_BTW_SHOTS)) {
-								Sprite *shot = create_sprite(get_pixmap(0), player1->x, player1->y);
+								Sprite *shot = create_sprite(get_xpm(0), player1->x, player1->y);
 								int x = player1->x - crosshair->x;
 								int y = player1->y - crosshair->y;
 								int l = sqrt(x*x + y*y);
@@ -444,27 +444,27 @@ int menu(char *video_mem){
 	}
 
 	// Number and letters
-	Sprite *pewpew1 = create_sprite(get_pixmap(7), 264, 100);
+	Sprite *pewpew1 = create_sprite(get_xpm(7), 264, 100);
 	draw_sprite(pewpew1, double_buffer);
 	destroy_sprite(pewpew1);
 
-	Sprite *pewpew2 = create_sprite(get_pixmap(7), 370, 206);
+	Sprite *pewpew2 = create_sprite(get_xpm(7), 370, 206);
 	draw_sprite(pewpew2, double_buffer);
 	destroy_sprite(pewpew2);
 
-	Sprite *ex = create_sprite(get_pixmap(13), 736, 206);
+	Sprite *ex = create_sprite(get_xpm(13), 736, 206);
 	draw_sprite(ex, double_buffer);
 	destroy_sprite(ex);
 
 
-	Sprite *start = create_sprite(get_pixmap(8), 354, 500);
+	Sprite *start = create_sprite(get_xpm(8), 354, 500);
 	draw_sprite(start, double_buffer);
 
 
 	memcpy(mouse_buffer, double_buffer, H_RES * V_RES);
 
 	//Mouse cursor
-	Sprite *arrow = create_sprite(get_pixmap(3), 50,50);
+	Sprite *arrow = create_sprite(get_xpm(3), 50,50);
 	draw_sprite(arrow, mouse_buffer);
 
 	//Mouse stream and enable
@@ -582,7 +582,6 @@ int menu(char *video_mem){
 	}
 }
 
-
 void player_wins(char *video_mem, int player) {
 	int r, ipc_status, scan_result;
 	message msg;
@@ -596,27 +595,27 @@ void player_wins(char *video_mem, int player) {
 	double_buffer = malloc(H_RES*V_RES);
 
 	Sprite *pl;
-	pl = create_sprite(get_pixmap(9), 62, 320);
+	pl = create_sprite(get_xpm(9), 62, 320);
 	draw_sprite(pl, double_buffer);
 	destroy_sprite(pl);
 
 	Sprite *n;
 	Sprite *w;
 	if (player == 1) {
-		n = create_sprite(get_pixmap(10), 562, 320);
+		n = create_sprite(get_xpm(10), 562, 320);
 		draw_sprite(n, double_buffer);
 
-		w = create_sprite(get_pixmap(12), 641, 320);
+		w = create_sprite(get_xpm(12), 641, 320);
 		draw_sprite(w, double_buffer);
 
 		destroy_sprite(n);
 		destroy_sprite(w);
 	}
 	else {
-		n = create_sprite(get_pixmap(11), 562, 320);
+		n = create_sprite(get_xpm(11), 562, 320);
 		draw_sprite(n, double_buffer);
 
-		w = create_sprite(get_pixmap(12), 686, 320);
+		w = create_sprite(get_xpm(12), 686, 320);
 		draw_sprite(w, double_buffer);
 
 		destroy_sprite(n);

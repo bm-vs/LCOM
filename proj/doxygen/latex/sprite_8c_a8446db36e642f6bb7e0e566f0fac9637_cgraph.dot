@@ -1,0 +1,11 @@
+digraph "move_sprite"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="move_sprite",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="set_y_speed_sprite",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sprite_8c.html#a4ca599f2889585f0c7a78ec6622d6928",tooltip="Sets a sprite&#39;s vertical speed to the specified. "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="set_x_speed_sprite",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sprite_8c.html#a4dd652976ab61cba06875d87e52df12f",tooltip="Sets a sprite&#39;s horizontal speed to the specified. "];
+}

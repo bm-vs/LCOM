@@ -1,0 +1,4 @@
+<map id="move_sprite" name="move_sprite">
+<area shape="rect" id="node2" href="$group__sprite.html#ga4ca599f2889585f0c7a78ec6622d6928" title="Sets a sprite&#39;s vertical speed to the specified. " alt="" coords="144,5,279,32"/>
+<area shape="rect" id="node3" href="$group__sprite.html#ga4dd652976ab61cba06875d87e52df12f" title="Sets a sprite&#39;s horizontal speed to the specified. " alt="" coords="144,56,279,83"/>
+</map>

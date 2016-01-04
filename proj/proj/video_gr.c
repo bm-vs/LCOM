@@ -49,102 +49,6 @@ void *vg_init(unsigned short mode) {
 }
 
 
-void vg_draw_square(unsigned short x, unsigned short y, unsigned short size, unsigned long color, char *video_mem) {
-	unsigned long pos;
-	pos = y * H_RES + x;
-
-	int y_pos;
-	int x_pos;
-	for (y_pos = 0; y_pos < size; y_pos++) {
-		for (x_pos = 0; x_pos < size; x_pos++) {
-			video_mem[pos] = color;
-			pos++;
-		}
-		pos = (y + y_pos) * H_RES + x;
-	}
-}
-
-
-void vg_draw_line(unsigned short xi, unsigned short yi,
-		           unsigned short xf, unsigned short yf, unsigned long color, char *video_mem) {
-
-
-	unsigned long pos;
-	float add = 0;
-	float slope;
-
-	// Swap values so that the initial point
-	// is always to the left of the final one
-	if (xf < xi) {
-		swap(&xi, &xf);
-		swap(&yi, &yf);
-	}
-
-	// Vertical lines
-	if (xi == xf) {
-		if (yf < yi) {
-			swap(&yi, &yf);
-		}
-
-		while (yi <= yf) {
-			pos = yi * H_RES + xi;
-
-			video_mem[pos] = color;
-			yi++;
-		}
-	}
-	// Every other line
-	else {
-		slope = (yf - yi)/((float) xf - xi);
-
-		// From top to bottom
-		while ((xi != xf) || (yi != yf)) {
-			pos = yi * H_RES + xi;
-
-			video_mem[pos] = color;
-
-			if (abs(slope) == 1) {
-				xi++;
-				yi += slope;
-			}
-			else if (slope < 1 && slope > -1) {
-				add += slope;
-				if (xi != xf) {
-					xi++;
-				}
-				if (add >= 1) {
-					yi++;
-					add--;
-				}
-				else if (add <= -1) {
-					yi--;
-					add++;
-				}
-			}
-			else if (slope > 1 || slope < -1) {
-				add += 1/slope;
-				if (yi != yf && slope > 1) {
-					yi++;
-				}
-				else if (yi != yf && slope < -1) {
-					yi--;
-				}
-
-				if (add > 1) {
-					xi++;
-					add--;
-				}
-				else if (add < -1) {
-					xi++;
-					add++;
-				}
-			}
-
-		}
-	}
-}
-
-
 int vg_draw_pixmap(unsigned short xi, unsigned short yi, unsigned short height, unsigned short width,
 		char *pixmap, char *video_mem) {
 
@@ -172,27 +76,6 @@ int vg_draw_pixmap(unsigned short xi, unsigned short yi, unsigned short height, 
 	}
 
 	return 0;
-}
-
-
-void vg_erase_pixmap(unsigned short xi, unsigned short yi, unsigned short height, unsigned short width,
-		char *pixmap, char *video_mem) {
-
-	unsigned long vram_pos;
-	unsigned long sprite_pos = 0;
-	vram_pos = yi * H_RES + xi;
-
-	int y_pos;
-	int x_pos;
-	for (y_pos = 0; y_pos < height; y_pos++) {
-		for (x_pos = 0; x_pos < width; x_pos++) {
-			video_mem[vram_pos] = BLACK;
-			vram_pos++;
-			sprite_pos++;
-		}
-
-		vram_pos = (yi + y_pos) * H_RES + xi;
-	}
 }
 
 

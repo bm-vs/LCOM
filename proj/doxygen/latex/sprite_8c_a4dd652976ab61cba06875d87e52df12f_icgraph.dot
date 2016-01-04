@@ -1,0 +1,14 @@
+digraph "set_x_speed_sprite"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="set_x_speed_sprite",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="game",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$game_8h.html#a860a3ff149bb616ec2242dc34bb52b51",tooltip="Primary game function. "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$proj_8c.html#a3c04138a5bfe5d72780bb7e82a18e627"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="move_sprite",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sprite_8h.html#a8446db36e642f6bb7e0e566f0fac9637",tooltip="Moves a sprite. "];
+  Node4 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+}

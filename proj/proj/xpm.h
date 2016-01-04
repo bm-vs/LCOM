@@ -5,7 +5,9 @@
 #include "constants.h"
 #define N_IMAGES	16
 
-char **get_pixmap(unsigned short xpm);
+
+char **get_xpm(unsigned short xpm);
+
 char *read_xpm(char *map[], int *wd, int *ht);
 
 

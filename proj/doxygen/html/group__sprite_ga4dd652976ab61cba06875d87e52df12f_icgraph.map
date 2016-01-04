@@ -1,0 +1,4 @@
+<map id="set_x_speed_sprite" name="set_x_speed_sprite">
+<area shape="rect" id="node2" href="$group__game.html#ga860a3ff149bb616ec2242dc34bb52b51" title="Primary game function. " alt="" coords="327,5,381,32"/>
+<area shape="rect" id="node3" href="$group__sprite.html#ga8446db36e642f6bb7e0e566f0fac9637" title="Moves a sprite. " alt="" coords="188,31,279,57"/>
+</map>

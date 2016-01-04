@@ -1,0 +1,63 @@
+\hypertarget{group__xpm}{}\section{xpm}
+\label{group__xpm}\index{xpm@{xpm}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$$\ast$ \hyperlink{group__xpm_ga49aa32a94f19bdfe39a1c160ac741990}{get\+\_\+xpm} (unsigned short xpm)
+\begin{DoxyCompactList}\small\item\em Returns the desired xpm. \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{group__xpm_ga05b2c5e4dbcaffa701703b50a2111783}{read\+\_\+xpm} (char $\ast$map\mbox{[}$\,$\mbox{]}, int $\ast$wd, int $\ast$ht)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Functions related to unprocessed images to be used. 
+
+\subsection{Function Documentation}
+\hypertarget{group__xpm_ga49aa32a94f19bdfe39a1c160ac741990}{}\index{xpm@{xpm}!get\+\_\+xpm@{get\+\_\+xpm}}
+\index{get\+\_\+xpm@{get\+\_\+xpm}!xpm@{xpm}}
+\subsubsection[{get\+\_\+xpm(unsigned short xpm)}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$$\ast$ get\+\_\+xpm (
+\begin{DoxyParamCaption}
+\item[{unsigned short}]{xpm}
+\end{DoxyParamCaption}
+)}\label{group__xpm_ga49aa32a94f19bdfe39a1c160ac741990}
+
+
+Returns the desired xpm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xpm} & number of the xpm \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the desired xpm. N\+U\+L\+L if failed 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+% FIG 0
+
+
+\hypertarget{group__xpm_ga05b2c5e4dbcaffa701703b50a2111783}{}\index{xpm@{xpm}!read\+\_\+xpm@{read\+\_\+xpm}}
+\index{read\+\_\+xpm@{read\+\_\+xpm}!xpm@{xpm}}
+\subsubsection[{read\+\_\+xpm(char $\ast$map[], int $\ast$wd, int $\ast$ht)}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ read\+\_\+xpm (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{map\mbox{[}$\,$\mbox{]}, }
+\item[{int $\ast$}]{wd, }
+\item[{int $\ast$}]{ht}
+\end{DoxyParamCaption}
+)}\label{group__xpm_ga05b2c5e4dbcaffa701703b50a2111783}
+Reads a xpm-\/like sprite defined in \char`\"{}map\char`\"{} (look at pixmap.\+h for examples). Returns the address of the allocated memory where the sprite was read. Updates \char`\"{}width\char`\"{} and \char`\"{}heigh\char`\"{} with the sprite dimension. Return N\+U\+L\+L on error. Assumes that V\+R\+E\+S and H\+R\+E\+S (the screen vertical and horizontal resolution) are externaly defined.
+
+Usage example, using the defined sprite in pixmap.\+h\+: 
+\begin{DoxyPre}
+  #include "pixmap.h" // defines  pic1, pic2, etc 
+  int wd, hg;
+  char *sprite = read\_xpm(pic1, &wd, &hg);
+\end{DoxyPre}
+ 
+
+Here is the caller graph for this function\+:
+% FIG 1
+
+

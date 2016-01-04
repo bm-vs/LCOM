@@ -1,0 +1,228 @@
+\hypertarget{group__vbe}{}\section{vbe}
+\label{group__vbe}\index{vbe@{vbe}}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct____attribute____}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{group__vbe_ga4ef3234e41f2050bc094a22049b69e45}{vbe\+\_\+get\+\_\+mode\+\_\+info} (unsigned short mode, vbe\+\_\+mode\+\_\+info\+\_\+t $\ast$vmi\+\_\+p)
+\begin{DoxyCompactList}\small\item\em Returns information on the input V\+B\+E mode, including screen dimensions, color depth and V\+R\+A\+M physical address. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__vbe_gad7593abf9d201ce5e59de60baba548cd}{}uint16\+\_\+t \hyperlink{group__vbe_gad7593abf9d201ce5e59de60baba548cd}{Mode\+Attributes}\label{group__vbe_gad7593abf9d201ce5e59de60baba548cd}
+
+\begin{DoxyCompactList}\small\item\em mode attributes \end{DoxyCompactList}\item 
+\hypertarget{group__vbe_gaaa90049ea7f03763acbbf75240f4f5d8}{}uint8\+\_\+t \hyperlink{group__vbe_gaaa90049ea7f03763acbbf75240f4f5d8}{Win\+A\+Attributes}\label{group__vbe_gaaa90049ea7f03763acbbf75240f4f5d8}
+
+\begin{DoxyCompactList}\small\item\em window A attributes \end{DoxyCompactList}\item 
+\hypertarget{group__vbe_ga370ddeb84e904ef1000fe57905ebf6b8}{}uint8\+\_\+t \hyperlink{group__vbe_ga370ddeb84e904ef1000fe57905ebf6b8}{Win\+B\+Attributes}\label{group__vbe_ga370ddeb84e904ef1000fe57905ebf6b8}
+
+\begin{DoxyCompactList}\small\item\em window B attributes \end{DoxyCompactList}\item 
+\hypertarget{group__vbe_ga38f205f799c6929629395f03e24de077}{}uint16\+\_\+t \hyperlink{group__vbe_ga38f205f799c6929629395f03e24de077}{Win\+Granularity}\label{group__vbe_ga38f205f799c6929629395f03e24de077}
+
+\begin{DoxyCompactList}\small\item\em window granularity \end{DoxyCompactList}\item 
+\hypertarget{group__vbe_ga78985f1c5ae166cb560099273cc558b4}{}uint16\+\_\+t \hyperlink{group__vbe_ga78985f1c5ae166cb560099273cc558b4}{Win\+Size}\label{group__vbe_ga78985f1c5ae166cb560099273cc558b4}
+
+\begin{DoxyCompactList}\small\item\em window size \end{DoxyCompactList}\item 
+\hypertarget{group__vbe_ga99b747099fd4d4271b0f0bc29f31c48f}{}uint16\+\_\+t \hyperlink{group__vbe_ga99b747099fd4d4271b0f0bc29f31c48f}{Win\+A\+Segment}\label{group__vbe_ga99b747099fd4d4271b0f0bc29f31c48f}
+
+\begin{DoxyCompactList}\small\item\em window A start segment \end{DoxyCompactList}\item 
+\hypertarget{group__vbe_ga9edf422a931df7c7a1d5f82afb911566}{}uint16\+\_\+t \hyperlink{group__vbe_ga9edf422a931df7c7a1d5f82afb911566}{Win\+B\+Segment}\label{group__vbe_ga9edf422a931df7c7a1d5f82afb911566}
+
+\begin{DoxyCompactList}\small\item\em window B start segment \end{DoxyCompactList}\item 
+\hypertarget{group__vbe_gaffd250a4766543099f253e27af3abc35}{}phys\+\_\+bytes \hyperlink{group__vbe_gaffd250a4766543099f253e27af3abc35}{Win\+Func\+Ptr}\label{group__vbe_gaffd250a4766543099f253e27af3abc35}
+
+\begin{DoxyCompactList}\small\item\em real mode/far pointer to window function \end{DoxyCompactList}\item 
+\hypertarget{group__vbe_gafe40654a51bf4a12a8b376ff3506688e}{}uint16\+\_\+t \hyperlink{group__vbe_gafe40654a51bf4a12a8b376ff3506688e}{Bytes\+Per\+Scan\+Line}\label{group__vbe_gafe40654a51bf4a12a8b376ff3506688e}
+
+\begin{DoxyCompactList}\small\item\em bytes per scan line \end{DoxyCompactList}\item 
+\hypertarget{group__vbe_ga16f6408e5a85c7a7785a0cee64b6a219}{}uint16\+\_\+t \hyperlink{group__vbe_ga16f6408e5a85c7a7785a0cee64b6a219}{X\+Resolution}\label{group__vbe_ga16f6408e5a85c7a7785a0cee64b6a219}
+
+\begin{DoxyCompactList}\small\item\em horizontal resolution in pixels/characters \end{DoxyCompactList}\item 
+\hypertarget{group__vbe_gafa8aba2156994750d500f85d0f8425cb}{}uint16\+\_\+t \hyperlink{group__vbe_gafa8aba2156994750d500f85d0f8425cb}{Y\+Resolution}\label{group__vbe_gafa8aba2156994750d500f85d0f8425cb}
+
+\begin{DoxyCompactList}\small\item\em vertical resolution in pixels/characters \end{DoxyCompactList}\item 
+\hypertarget{group__vbe_ga047d8f41434f02589d0c9b90b17c67eb}{}uint8\+\_\+t \hyperlink{group__vbe_ga047d8f41434f02589d0c9b90b17c67eb}{X\+Char\+Size}\label{group__vbe_ga047d8f41434f02589d0c9b90b17c67eb}
+
+\begin{DoxyCompactList}\small\item\em character cell width in pixels \end{DoxyCompactList}\item 
+\hypertarget{group__vbe_ga330f00ebd49dccd2325d43cdbd646f09}{}uint8\+\_\+t \hyperlink{group__vbe_ga330f00ebd49dccd2325d43cdbd646f09}{Y\+Char\+Size}\label{group__vbe_ga330f00ebd49dccd2325d43cdbd646f09}
+
+\begin{DoxyCompactList}\small\item\em character cell height in pixels \end{DoxyCompactList}\item 
+\hypertarget{group__vbe_ga51268efaac55d78e17263aff9a447998}{}uint8\+\_\+t \hyperlink{group__vbe_ga51268efaac55d78e17263aff9a447998}{Number\+Of\+Planes}\label{group__vbe_ga51268efaac55d78e17263aff9a447998}
+
+\begin{DoxyCompactList}\small\item\em number of memory planes \end{DoxyCompactList}\item 
+\hypertarget{group__vbe_ga03756ae144fce823087a2a4255bf4bb1}{}uint8\+\_\+t \hyperlink{group__vbe_ga03756ae144fce823087a2a4255bf4bb1}{Bits\+Per\+Pixel}\label{group__vbe_ga03756ae144fce823087a2a4255bf4bb1}
+
+\begin{DoxyCompactList}\small\item\em bits per pixel \end{DoxyCompactList}\item 
+\hypertarget{group__vbe_gaa955c03441b6d3e55b2ba4be4dae56a2}{}uint8\+\_\+t \hyperlink{group__vbe_gaa955c03441b6d3e55b2ba4be4dae56a2}{Number\+Of\+Banks}\label{group__vbe_gaa955c03441b6d3e55b2ba4be4dae56a2}
+
+\begin{DoxyCompactList}\small\item\em number of banks \end{DoxyCompactList}\item 
+\hypertarget{group__vbe_gab9be703b2b515ba3428ed97af9bb084d}{}uint8\+\_\+t \hyperlink{group__vbe_gab9be703b2b515ba3428ed97af9bb084d}{Memory\+Model}\label{group__vbe_gab9be703b2b515ba3428ed97af9bb084d}
+
+\begin{DoxyCompactList}\small\item\em memory model type \end{DoxyCompactList}\item 
+\hypertarget{group__vbe_ga7e31ea09e6e6755e3a504b9c76b3f545}{}uint8\+\_\+t \hyperlink{group__vbe_ga7e31ea09e6e6755e3a504b9c76b3f545}{Bank\+Size}\label{group__vbe_ga7e31ea09e6e6755e3a504b9c76b3f545}
+
+\begin{DoxyCompactList}\small\item\em bank size in K\+B \end{DoxyCompactList}\item 
+\hypertarget{group__vbe_ga7033bb4cac6dc49f68ca4df855151e09}{}uint8\+\_\+t \hyperlink{group__vbe_ga7033bb4cac6dc49f68ca4df855151e09}{Number\+Of\+Image\+Pages}\label{group__vbe_ga7033bb4cac6dc49f68ca4df855151e09}
+
+\begin{DoxyCompactList}\small\item\em number of images \end{DoxyCompactList}\item 
+\hypertarget{group__vbe_ga604037992fe7e5fd08e1bcc684a1b12d}{}uint8\+\_\+t \hyperlink{group__vbe_ga604037992fe7e5fd08e1bcc684a1b12d}{Reserved1}\label{group__vbe_ga604037992fe7e5fd08e1bcc684a1b12d}
+
+\begin{DoxyCompactList}\small\item\em reserved for page function \end{DoxyCompactList}\item 
+\hypertarget{group__vbe_ga5e25f6a8eedde631fff577bcf7d4f6f4}{}uint8\+\_\+t {\bfseries Red\+Mask\+Size}\label{group__vbe_ga5e25f6a8eedde631fff577bcf7d4f6f4}
+
+\item 
+\hypertarget{group__vbe_ga20cb142b8c1b0a2b41244fef469a11f4}{}uint8\+\_\+t {\bfseries Red\+Field\+Position}\label{group__vbe_ga20cb142b8c1b0a2b41244fef469a11f4}
+
+\item 
+\hypertarget{group__vbe_gac7b4df72e505b74493e7d5144cbac743}{}uint8\+\_\+t {\bfseries Green\+Mask\+Size}\label{group__vbe_gac7b4df72e505b74493e7d5144cbac743}
+
+\item 
+\hypertarget{group__vbe_ga602b28f8e5da781eabfd736743a6ea09}{}uint8\+\_\+t {\bfseries Green\+Field\+Position}\label{group__vbe_ga602b28f8e5da781eabfd736743a6ea09}
+
+\item 
+\hypertarget{group__vbe_ga84842a6a42e881ce7be87482122bcc4e}{}uint8\+\_\+t {\bfseries Blue\+Mask\+Size}\label{group__vbe_ga84842a6a42e881ce7be87482122bcc4e}
+
+\item 
+\hypertarget{group__vbe_ga4d0396c07a4f07556332fec2b4a6c2bf}{}uint8\+\_\+t {\bfseries Blue\+Field\+Position}\label{group__vbe_ga4d0396c07a4f07556332fec2b4a6c2bf}
+
+\item 
+\hypertarget{group__vbe_ga87d544680f1132f30b038c0ebf0b829b}{}uint8\+\_\+t {\bfseries Rsvd\+Mask\+Size}\label{group__vbe_ga87d544680f1132f30b038c0ebf0b829b}
+
+\item 
+\hypertarget{group__vbe_gaa357b085181776f2918a6df25c88846b}{}uint8\+\_\+t {\bfseries Rsvd\+Field\+Position}\label{group__vbe_gaa357b085181776f2918a6df25c88846b}
+
+\item 
+\hypertarget{group__vbe_ga3bf2fd2394ec8649ec3d26104be35dd7}{}uint8\+\_\+t {\bfseries Direct\+Color\+Mode\+Info}\label{group__vbe_ga3bf2fd2394ec8649ec3d26104be35dd7}
+
+\item 
+\hypertarget{group__vbe_ga1d11f4921094db253fc2c2ee6fbb2afb}{}phys\+\_\+bytes \hyperlink{group__vbe_ga1d11f4921094db253fc2c2ee6fbb2afb}{Phys\+Base\+Ptr}\label{group__vbe_ga1d11f4921094db253fc2c2ee6fbb2afb}
+
+\begin{DoxyCompactList}\small\item\em physical address for flat memory frame buffer \end{DoxyCompactList}\item 
+\hypertarget{group__vbe_ga09b5824ec5c67bee2a4b36c0ab5181bc}{}uint8\+\_\+t \hyperlink{group__vbe_ga09b5824ec5c67bee2a4b36c0ab5181bc}{Reserved2} \mbox{[}4\mbox{]}\label{group__vbe_ga09b5824ec5c67bee2a4b36c0ab5181bc}
+
+\begin{DoxyCompactList}\small\item\em Reserved -\/ always set to 0. \end{DoxyCompactList}\item 
+\hypertarget{group__vbe_ga2455a82e0d8cc0e8d76e8cf77a68bd39}{}uint8\+\_\+t \hyperlink{group__vbe_ga2455a82e0d8cc0e8d76e8cf77a68bd39}{Reserved3} \mbox{[}2\mbox{]}\label{group__vbe_ga2455a82e0d8cc0e8d76e8cf77a68bd39}
+
+\begin{DoxyCompactList}\small\item\em Reserved -\/ always set to 0. \end{DoxyCompactList}\item 
+\hypertarget{group__vbe_ga53c5060b6ac14a7418ca8421edfb9981}{}uint16\+\_\+t {\bfseries Lin\+Bytes\+Per\+Scan\+Line}\label{group__vbe_ga53c5060b6ac14a7418ca8421edfb9981}
+
+\item 
+\hypertarget{group__vbe_ga33ba903e149724b1bc99b3b8e43a7cbe}{}uint8\+\_\+t {\bfseries Bnk\+Number\+Of\+Image\+Pages}\label{group__vbe_ga33ba903e149724b1bc99b3b8e43a7cbe}
+
+\item 
+\hypertarget{group__vbe_ga3fa2352e69836f4b69b3a344ae761ba8}{}uint8\+\_\+t {\bfseries Lin\+Number\+Of\+Image\+Pages}\label{group__vbe_ga3fa2352e69836f4b69b3a344ae761ba8}
+
+\item 
+\hypertarget{group__vbe_ga1fbcef2402fe6ce7f6c006bd50eaa6da}{}uint8\+\_\+t {\bfseries Lin\+Red\+Mask\+Size}\label{group__vbe_ga1fbcef2402fe6ce7f6c006bd50eaa6da}
+
+\item 
+\hypertarget{group__vbe_gaff962b58f86a77f12b412d47125a4993}{}uint8\+\_\+t {\bfseries Lin\+Red\+Field\+Position}\label{group__vbe_gaff962b58f86a77f12b412d47125a4993}
+
+\item 
+\hypertarget{group__vbe_gaf235e505028771ab2fb84778f4dfb476}{}uint8\+\_\+t {\bfseries Lin\+Green\+Mask\+Size}\label{group__vbe_gaf235e505028771ab2fb84778f4dfb476}
+
+\item 
+\hypertarget{group__vbe_ga6683a63711dbc5dfb9a2a59c55deecd5}{}uint8\+\_\+t {\bfseries Lin\+Green\+Field\+Position}\label{group__vbe_ga6683a63711dbc5dfb9a2a59c55deecd5}
+
+\item 
+\hypertarget{group__vbe_gad8a25cec803bf91fb40a20a0aa5d5bf7}{}uint8\+\_\+t {\bfseries Lin\+Blue\+Mask\+Size}\label{group__vbe_gad8a25cec803bf91fb40a20a0aa5d5bf7}
+
+\item 
+\hypertarget{group__vbe_ga3f38d6becbe961786cd7ab58ec37fc07}{}uint8\+\_\+t {\bfseries Lin\+Blue\+Field\+Position}\label{group__vbe_ga3f38d6becbe961786cd7ab58ec37fc07}
+
+\item 
+\hypertarget{group__vbe_ga334886fc9a915ff91966c3aac1da586a}{}uint8\+\_\+t {\bfseries Lin\+Rsvd\+Mask\+Size}\label{group__vbe_ga334886fc9a915ff91966c3aac1da586a}
+
+\item 
+\hypertarget{group__vbe_ga3df070e698b5f54814e20c8813f7bf7e}{}uint8\+\_\+t {\bfseries Lin\+Rsvd\+Field\+Position}\label{group__vbe_ga3df070e698b5f54814e20c8813f7bf7e}
+
+\item 
+\hypertarget{group__vbe_gab1fbd72846963ebb34a308a7edf7bbe1}{}uint32\+\_\+t {\bfseries Max\+Pixel\+Clock}\label{group__vbe_gab1fbd72846963ebb34a308a7edf7bbe1}
+
+\item 
+\hypertarget{group__vbe_ga2e13c4795a00241b919aa3aab86560ce}{}uint8\+\_\+t {\bfseries Reserved4} \mbox{[}190\mbox{]}\label{group__vbe_ga2e13c4795a00241b919aa3aab86560ce}
+
+\item 
+\hypertarget{group__vbe_gafd3a8744ce19caa07755c2604cce884c}{}char {\bfseries Vbe\+Signature} \mbox{[}4\mbox{]}\label{group__vbe_gafd3a8744ce19caa07755c2604cce884c}
+
+\item 
+\hypertarget{group__vbe_ga7b9fef89774326b46f9481cbd9a397d3}{}uint16\+\_\+t {\bfseries Vbe\+Version}\label{group__vbe_ga7b9fef89774326b46f9481cbd9a397d3}
+
+\item 
+\hypertarget{group__vbe_ga20ab55e9dda8d437875255529c1cffe8}{}phys\+\_\+bytes {\bfseries Oem\+String\+Ptr}\label{group__vbe_ga20ab55e9dda8d437875255529c1cffe8}
+
+\item 
+\hypertarget{group__vbe_gaf005ca0116fa8ac69ef6198824f4d659}{}uint32\+\_\+t {\bfseries Capabilities}\label{group__vbe_gaf005ca0116fa8ac69ef6198824f4d659}
+
+\item 
+\hypertarget{group__vbe_ga9d989fdbcdad6a40c10fc28c0f9af760}{}phys\+\_\+bytes {\bfseries Video\+Mode\+Ptr}\label{group__vbe_ga9d989fdbcdad6a40c10fc28c0f9af760}
+
+\item 
+\hypertarget{group__vbe_ga3e7b41e709394a10b3667e7f27f1aa7a}{}uint16\+\_\+t {\bfseries Total\+Memory}\label{group__vbe_ga3e7b41e709394a10b3667e7f27f1aa7a}
+
+\item 
+\hypertarget{group__vbe_ga133984a56ec19abf4fcb2e6ae71d6498}{}uint16\+\_\+t {\bfseries Oem\+Software\+Rev}\label{group__vbe_ga133984a56ec19abf4fcb2e6ae71d6498}
+
+\item 
+\hypertarget{group__vbe_gaffd3a330afde841405f89bbcd05af4f0}{}phys\+\_\+bytes {\bfseries Oem\+Vendor\+Name\+Ptr}\label{group__vbe_gaffd3a330afde841405f89bbcd05af4f0}
+
+\item 
+\hypertarget{group__vbe_gafd3d28c2078a683b1ed64ea21905fcfe}{}phys\+\_\+bytes {\bfseries Oem\+Product\+Name\+Ptr}\label{group__vbe_gafd3d28c2078a683b1ed64ea21905fcfe}
+
+\item 
+\hypertarget{group__vbe_ga239cba41d0489da5b79556b45797c6b0}{}phys\+\_\+bytes {\bfseries Oem\+Product\+Rev\+Ptr}\label{group__vbe_ga239cba41d0489da5b79556b45797c6b0}
+
+\item 
+\hypertarget{group__vbe_ga2c3b1cbb6bad5c51d4be4e57255a61d2}{}uint8\+\_\+t {\bfseries Reserved} \mbox{[}222\mbox{]}\label{group__vbe_ga2c3b1cbb6bad5c51d4be4e57255a61d2}
+
+\item 
+\hypertarget{group__vbe_ga966ae75c33c2d65b4f0c916f093acac0}{}uint8\+\_\+t {\bfseries Oem\+Data} \mbox{[}256\mbox{]}\label{group__vbe_ga966ae75c33c2d65b4f0c916f093acac0}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Functions related to the V\+B\+E. 
+
+\subsection{Function Documentation}
+\hypertarget{group__vbe_ga4ef3234e41f2050bc094a22049b69e45}{}\index{vbe@{vbe}!vbe\+\_\+get\+\_\+mode\+\_\+info@{vbe\+\_\+get\+\_\+mode\+\_\+info}}
+\index{vbe\+\_\+get\+\_\+mode\+\_\+info@{vbe\+\_\+get\+\_\+mode\+\_\+info}!vbe@{vbe}}
+\subsubsection[{vbe\+\_\+get\+\_\+mode\+\_\+info(unsigned short mode, vbe\+\_\+mode\+\_\+info\+\_\+t $\ast$vmi\+\_\+p)}]{\setlength{\rightskip}{0pt plus 5cm}int vbe\+\_\+get\+\_\+mode\+\_\+info (
+\begin{DoxyParamCaption}
+\item[{unsigned short}]{mode, }
+\item[{vbe\+\_\+mode\+\_\+info\+\_\+t $\ast$}]{vmi\+\_\+p}
+\end{DoxyParamCaption}
+)}\label{group__vbe_ga4ef3234e41f2050bc094a22049b69e45}
+
+
+Returns information on the input V\+B\+E mode, including screen dimensions, color depth and V\+R\+A\+M physical address. 
+
+Initializes unpacked vbe\+\_\+mode\+\_\+\+\_\+info\+\_\+t structure passed as an address with the information of the input mode, by calling V\+B\+E function 0x01 Return V\+B\+E Mode Information and unpacking the Mode\+Info\+Block struct returned by that function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & mode whose information should be returned \\
+\hline
+{\em vmi\+\_\+p} & address of vbe\+\_\+mode\+\_\+info\+\_\+t structure to be initialized \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, non-\/zero otherwise 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\+:
+% FIG 0
+
+
+
+
+Here is the caller graph for this function\+:
+% FIG 1
+
+

@@ -1,0 +1,19 @@
+\hypertarget{video__gr_8c}{}\section{proj 3.0/video\+\_\+gr.c File Reference}
+\label{video__gr_8c}\index{proj 3.\+0/video\+\_\+gr.\+c@{proj 3.\+0/video\+\_\+gr.\+c}}
+{\ttfamily \#include $<$minix/syslib.\+h$>$}\\*
+{\ttfamily \#include $<$minix/drivers.\+h$>$}\\*
+{\ttfamily \#include $<$machine/int86.\+h$>$}\\*
+{\ttfamily \#include $<$sys/mman.\+h$>$}\\*
+{\ttfamily \#include $<$sys/types.\+h$>$}\\*
+{\ttfamily \#include $<$math.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}vbe.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}video\+\_\+gr.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \hyperlink{group__video__gr_gacef21667c79365d57a084bed994c2189}{vg\+\_\+init} (unsigned short mode)
+\begin{DoxyCompactList}\small\item\em Initializes the video module in graphics mode. \end{DoxyCompactList}\item 
+int \hyperlink{group__video__gr_ga8d61f47c55916ab299a43f7fd799d04d}{vg\+\_\+draw\+\_\+pixmap} (unsigned short xi, unsigned short yi, unsigned short height, unsigned short width, char $\ast$pixmap, char $\ast$video\+\_\+mem)
+\begin{DoxyCompactList}\small\item\em Draws a pixmap on the given buffer. \end{DoxyCompactList}\item 
+int \hyperlink{group__video__gr_ga42f593e6656f1a978315aff02b1bcebf}{vg\+\_\+exit} ()
+\begin{DoxyCompactList}\small\item\em Returns to default Minix 3 text mode (0x03\+: 25 x 80, 16 colors) \end{DoxyCompactList}\end{DoxyCompactItemize}

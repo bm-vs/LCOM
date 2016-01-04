@@ -1,0 +1,123 @@
+\hypertarget{group__vector}{}\section{vector}
+\label{group__vector}\index{vector@{vector}}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structvector}{vector}
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{group__vector_ga439227feff9d7f55384e8780cfc2eb82}{size}
+\item 
+void $\ast$$\ast$ \hyperlink{group__vector_ga94977134c19c2c536550e6b13d69218d}{items}
+\end{DoxyCompactItemize}
+\subsection*{Vector}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structvector}{vector} \hyperlink{group__vector_ga604ea30e5e116f443a85a821a53402c7}{vector}
+\item 
+void \hyperlink{group__vector_ga2ca876aefcda7c65704d5a5b4e334eea}{vector\+\_\+init} (\hyperlink{structvector}{vector} $\ast$v)
+\begin{DoxyCompactList}\small\item\em Initializes a vector with size 0. \end{DoxyCompactList}\item 
+void \hyperlink{group__vector_ga085e5c2ac696df22b2b2ae8326d03a84}{vector\+\_\+push\+\_\+back} (\hyperlink{structvector}{vector} $\ast$v, void $\ast$item)
+\begin{DoxyCompactList}\small\item\em Adds item to the end of the vector. \end{DoxyCompactList}\item 
+void \hyperlink{group__vector_ga951a0ef34f7e54967c45c59f9ded305b}{vector\+\_\+erase} (\hyperlink{structvector}{vector} $\ast$v, int index)
+\begin{DoxyCompactList}\small\item\em Removes element from the index position of the vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Functions related to the vector-\/like container we implemented. 
+
+\subsection{Typedef Documentation}
+\hypertarget{group__vector_ga604ea30e5e116f443a85a821a53402c7}{}\index{vector@{vector}!vector@{vector}}
+\index{vector@{vector}!vector@{vector}}
+\subsubsection[{vector}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf vector}  {\bf vector}}\label{group__vector_ga604ea30e5e116f443a85a821a53402c7}
+Vector like dynamic container 
+
+\subsection{Function Documentation}
+\hypertarget{group__vector_ga951a0ef34f7e54967c45c59f9ded305b}{}\index{vector@{vector}!vector\+\_\+erase@{vector\+\_\+erase}}
+\index{vector\+\_\+erase@{vector\+\_\+erase}!vector@{vector}}
+\subsubsection[{vector\+\_\+erase(vector $\ast$v, int index)}]{\setlength{\rightskip}{0pt plus 5cm}void vector\+\_\+erase (
+\begin{DoxyParamCaption}
+\item[{{\bf vector} $\ast$}]{v, }
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}\label{group__vector_ga951a0ef34f7e54967c45c59f9ded305b}
+
+
+Removes element from the index position of the vector. 
+
+Also updates size.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & vector to be altered. \\
+\hline
+{\em index} & position of the element of the vector to erase. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\+:
+% FIG 0
+
+
+\hypertarget{group__vector_ga2ca876aefcda7c65704d5a5b4e334eea}{}\index{vector@{vector}!vector\+\_\+init@{vector\+\_\+init}}
+\index{vector\+\_\+init@{vector\+\_\+init}!vector@{vector}}
+\subsubsection[{vector\+\_\+init(vector $\ast$v)}]{\setlength{\rightskip}{0pt plus 5cm}void vector\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{{\bf vector} $\ast$}]{v}
+\end{DoxyParamCaption}
+)}\label{group__vector_ga2ca876aefcda7c65704d5a5b4e334eea}
+
+
+Initializes a vector with size 0. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & vector to be initialized. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\+:
+% FIG 1
+
+
+\hypertarget{group__vector_ga085e5c2ac696df22b2b2ae8326d03a84}{}\index{vector@{vector}!vector\+\_\+push\+\_\+back@{vector\+\_\+push\+\_\+back}}
+\index{vector\+\_\+push\+\_\+back@{vector\+\_\+push\+\_\+back}!vector@{vector}}
+\subsubsection[{vector\+\_\+push\+\_\+back(vector $\ast$v, void $\ast$item)}]{\setlength{\rightskip}{0pt plus 5cm}void vector\+\_\+push\+\_\+back (
+\begin{DoxyParamCaption}
+\item[{{\bf vector} $\ast$}]{v, }
+\item[{void $\ast$}]{item}
+\end{DoxyParamCaption}
+)}\label{group__vector_ga085e5c2ac696df22b2b2ae8326d03a84}
+
+
+Adds item to the end of the vector. 
+
+Also updates size.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & vector to be altered. \\
+\hline
+{\em item} & item to add. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\+:
+% FIG 2
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{group__vector_ga94977134c19c2c536550e6b13d69218d}{}\index{vector@{vector}!items@{items}}
+\index{items@{items}!vector@{vector}}
+\subsubsection[{items}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$$\ast$ items}\label{group__vector_ga94977134c19c2c536550e6b13d69218d}
+elements of the vector \hypertarget{group__vector_ga439227feff9d7f55384e8780cfc2eb82}{}\index{vector@{vector}!size@{size}}
+\index{size@{size}!vector@{vector}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}int size}\label{group__vector_ga439227feff9d7f55384e8780cfc2eb82}
+number of elements in the vector 

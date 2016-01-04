@@ -1,0 +1,9 @@
+<map id="player_wins" name="player_wins">
+<area shape="rect" id="node2" href="$group__timer.html#ga4c5d9f47323eda494cfd826f6d62eec9" title="Subscribes and enables Timer 0 interrupts. " alt="" coords="144,5,279,32"/>
+<area shape="rect" id="node3" href="$group__sprite.html#ga585fbaeb1d5f34bb4e1393e7e99697dd" title="Creates a sprite. " alt="" coords="163,56,260,83"/>
+<area shape="rect" id="node5" href="$group__xpm.html#ga49aa32a94f19bdfe39a1c160ac741990" title="Returns the desired xpm. " alt="" coords="175,107,247,133"/>
+<area shape="rect" id="node6" href="$group__sprite.html#ga65b342bdee0447b4d253a3fcfc95d78b" title="Draws a sprite. " alt="" coords="167,157,255,184"/>
+<area shape="rect" id="node8" href="$group__sprite.html#gaf16c6befaac9ffb673b9e3c798d542ed" title="Frees the memory occupied by the sprite. " alt="" coords="159,208,263,235"/>
+<area shape="rect" id="node4" href="$group__xpm.html#ga05b2c5e4dbcaffa701703b50a2111783" title="read_xpm" alt="" coords="346,56,425,83"/>
+<area shape="rect" id="node7" href="$group__video__gr.html#ga8d61f47c55916ab299a43f7fd799d04d" title="Draws a pixmap on the given buffer. " alt="" coords="327,157,444,184"/>
+</map>

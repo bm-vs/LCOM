@@ -1,0 +1,26 @@
+\hypertarget{sprite_8h}{}\section{proj 3.0/sprite.h File Reference}
+\label{sprite_8h}\index{proj 3.\+0/sprite.\+h@{proj 3.\+0/sprite.\+h}}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_sprite}{Sprite}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{Indent}{\bf Sprite}\par
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_sprite}{Sprite} $\ast$ \hyperlink{group__sprite_ga585fbaeb1d5f34bb4e1393e7e99697dd}{create\+\_\+sprite} (char $\ast$pic\mbox{[}$\,$\mbox{]}, unsigned short x, unsigned short y)
+\begin{DoxyCompactList}\small\item\em Creates a sprite. \end{DoxyCompactList}\item 
+int \hyperlink{group__sprite_ga65b342bdee0447b4d253a3fcfc95d78b}{draw\+\_\+sprite} (\hyperlink{struct_sprite}{Sprite} $\ast$sp, char $\ast$video\+\_\+mem)
+\begin{DoxyCompactList}\small\item\em Draws a sprite. \end{DoxyCompactList}\item 
+int \hyperlink{group__sprite_ga8446db36e642f6bb7e0e566f0fac9637}{move\+\_\+sprite} (\hyperlink{struct_sprite}{Sprite} $\ast$sp, unsigned short h\+\_\+res, unsigned short v\+\_\+res, char $\ast$video\+\_\+mem)
+\begin{DoxyCompactList}\small\item\em Moves a sprite. \end{DoxyCompactList}\item 
+int \hyperlink{group__sprite_gab9af15d14a3cb2f3f290be7355fbdb77}{move\+\_\+shot} (\hyperlink{struct_sprite}{Sprite} $\ast$sp, \hyperlink{struct_sprite}{Sprite} $\ast$p, unsigned short h\+\_\+res, unsigned short v\+\_\+res, char $\ast$video\+\_\+mem)
+\begin{DoxyCompactList}\small\item\em Moves a shot sprite. \end{DoxyCompactList}\item 
+void \hyperlink{group__sprite_ga4dd652976ab61cba06875d87e52df12f}{set\+\_\+x\+\_\+speed\+\_\+sprite} (\hyperlink{struct_sprite}{Sprite} $\ast$sp, int x\+\_\+speed)
+\begin{DoxyCompactList}\small\item\em Sets a sprite\textquotesingle{}s horizontal speed to the specified. \end{DoxyCompactList}\item 
+void \hyperlink{group__sprite_ga4ca599f2889585f0c7a78ec6622d6928}{set\+\_\+y\+\_\+speed\+\_\+sprite} (\hyperlink{struct_sprite}{Sprite} $\ast$sp, int y\+\_\+speed)
+\begin{DoxyCompactList}\small\item\em Sets a sprite\textquotesingle{}s vertical speed to the specified. \end{DoxyCompactList}\item 
+void \hyperlink{group__sprite_gaf16c6befaac9ffb673b9e3c798d542ed}{destroy\+\_\+sprite} (\hyperlink{struct_sprite}{Sprite} $\ast$sp)
+\begin{DoxyCompactList}\small\item\em Frees the memory occupied by the sprite. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}

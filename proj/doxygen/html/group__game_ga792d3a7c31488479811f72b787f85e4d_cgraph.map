@@ -1,0 +1,18 @@
+<map id="menu" name="menu">
+<area shape="rect" id="node2" href="$group__timer.html#ga4c5d9f47323eda494cfd826f6d62eec9" title="Subscribes and enables Timer 0 interrupts. " alt="" coords="127,5,261,32"/>
+<area shape="rect" id="node3" href="$group__mouse.html#ga99506573209b197b84ee22a228b89fbd" title="Subscribes to the mouse&#39;s interrupts. " alt="" coords="121,56,267,83"/>
+<area shape="rect" id="node4" href="$group__kbd.html#ga77e2ed8f53e0fae3f4005fa26c6d2692" title="Subscribes to the keyboard&#39;s interrupts. " alt="" coords="131,107,257,133"/>
+<area shape="rect" id="node5" href="$group__sprite.html#ga585fbaeb1d5f34bb4e1393e7e99697dd" title="Creates a sprite. " alt="" coords="145,157,243,184"/>
+<area shape="rect" id="node7" href="$group__xpm.html#ga49aa32a94f19bdfe39a1c160ac741990" title="Returns the desired xpm. " alt="" coords="158,208,230,235"/>
+<area shape="rect" id="node8" href="$group__sprite.html#ga65b342bdee0447b4d253a3fcfc95d78b" title="Draws a sprite. " alt="" coords="150,259,238,285"/>
+<area shape="rect" id="node10" href="$group__sprite.html#gaf16c6befaac9ffb673b9e3c798d542ed" title="Frees the memory occupied by the sprite. " alt="" coords="142,309,246,336"/>
+<area shape="rect" id="node11" href="$group__mouse.html#ga16a521d1919cbd8f434d8b5d535a639b" title="Sends the Set Stream Mode command to port 0x64. " alt="" coords="108,360,280,387"/>
+<area shape="rect" id="node12" href="$group__mouse.html#ga6d00dfd9c62a4446f67caea39b64d463" title="Sends the Enable Sending Data Packets command to port 0x64. " alt="" coords="117,411,271,437"/>
+<area shape="rect" id="node13" href="$group__kbd.html#ga76c3491bce9f85cce38e6af329b94d15" title="Unsubscribes from the keyboard&#39;s interrupts. " alt="" coords="137,461,251,488"/>
+<area shape="rect" id="node14" href="$group__kbd.html#gab9eea51549744bca5c5c923b388bb4ee" title="Unsubscribes from the keyboard&#39;s interrupts. " alt="" coords="119,512,269,539"/>
+<area shape="rect" id="node15" href="$group__mouse.html#ga685ad2706aca36d9869a30a19b9f446a" title="Unsubscribes from the mouse&#39;s interrupts. " alt="" coords="115,563,273,589"/>
+<area shape="rect" id="node16" href="$group__mouse.html#ga59b282691a2a3edde462f7b36351a74a" title="Receives the data in port 0x60. " alt="" coords="158,613,230,640"/>
+<area shape="rect" id="node17" href="$group__mouse.html#ga04bd9f2c1818e56a4604e290a068842b" title="Receives a mouse data packet and updates the sprite&#39;s coordinates accordingly. " alt="" coords="139,664,249,691"/>
+<area shape="rect" id="node6" href="$group__xpm.html#ga05b2c5e4dbcaffa701703b50a2111783" title="read_xpm" alt="" coords="347,157,426,184"/>
+<area shape="rect" id="node9" href="$group__video__gr.html#ga8d61f47c55916ab299a43f7fd799d04d" title="Draws a pixmap on the given buffer. " alt="" coords="328,259,445,285"/>
+</map>

@@ -6,8 +6,11 @@ typedef struct vector {
 	void** items;
 } vector;
 
+
 void vector_init(vector *v);
+
 void vector_push_back(vector *v, void *item);
+
 void vector_erase(vector *v, int index);
 
 

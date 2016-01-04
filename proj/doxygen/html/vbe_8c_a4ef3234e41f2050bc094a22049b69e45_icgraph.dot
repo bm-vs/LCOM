@@ -1,0 +1,11 @@
+digraph "vbe_get_mode_info"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="vbe_get_mode_info",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="vg_init",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$video__gr_8h.html#acef21667c79365d57a084bed994c2189",tooltip="Initializes the video module in graphics mode. "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$proj_8c.html#a3c04138a5bfe5d72780bb7e82a18e627"];
+}

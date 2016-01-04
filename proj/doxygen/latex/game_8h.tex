@@ -1,0 +1,25 @@
+\hypertarget{game_8h}{}\section{proj 3.0/game.h File Reference}
+\label{game_8h}\index{proj 3.\+0/game.\+h@{proj 3.\+0/game.\+h}}
+{\ttfamily \#include $<$minix/syslib.\+h$>$}\\*
+{\ttfamily \#include $<$minix/drivers.\+h$>$}\\*
+{\ttfamily \#include $<$machine/int86.\+h$>$}\\*
+{\ttfamily \#include $<$minix/sysutil.\+h$>$}\\*
+{\ttfamily \#include $<$minix/com.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$math.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}timer.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}kbd.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}video\+\_\+gr.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sprite.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}vector.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}vbe.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{group__game_ga860a3ff149bb616ec2242dc34bb52b51}{game} (char $\ast$video\+\_\+mem, int player, int time\+\_\+other\+\_\+player)
+\begin{DoxyCompactList}\small\item\em Primary game function. \end{DoxyCompactList}\item 
+int \hyperlink{group__game_ga792d3a7c31488479811f72b787f85e4d}{menu} (char $\ast$video\+\_\+mem)
+\begin{DoxyCompactList}\small\item\em Function for displaying the menu. \end{DoxyCompactList}\item 
+void \hyperlink{group__game_ga8273bb9d5ec414429bd897d7c95a1303}{player\+\_\+wins} (char $\ast$video\+\_\+mem, int player)
+\begin{DoxyCompactList}\small\item\em Function for displaying the winner of the game. \end{DoxyCompactList}\end{DoxyCompactItemize}
