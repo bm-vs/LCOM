@@ -5,9 +5,34 @@
 #include "constants.h"
 #define N_IMAGES	16
 
+/** @defgroup xpm xpm
+ * @{
+ *
+ * Functions related to unprocessed images to be used.
+ */
 
+
+/*! \brief Returns the desired xpm.
+*
+*	\param xpm number of the xpm
+*	\return pointer to the desired xpm. NULL if failed
+*/
 char **get_xpm(unsigned short xpm);
 
+/** Reads a xpm-like sprite defined in "map" (look at pixmap.h for
+ * examples). Returns the address of the allocated memory where the
+ * sprite was read. Updates "width" and "heigh" with the sprite
+ * dimension.  Return NULL on error.
+ * Assumes that VRES and HRES (the screen vertical and horizontal resolution)
+ * are externaly defined.
+ * 
+ * Usage example, using the defined sprite in pixmap.h:
+ * <pre>
+ *   #include "pixmap.h" // defines  pic1, pic2, etc 
+ *   int wd, hg;
+ *   char *sprite = read_xpm(pic1, &wd, &hg);
+ * </pre>
+*/
 char *read_xpm(char *map[], int *wd, int *ht);
 
 

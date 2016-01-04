@@ -10,6 +10,33 @@ int timer_irq = 0;
 int timer_hook_bit = 0;
 int hook_id = 0;
 
+int timer_get_conf(unsigned long timer, unsigned char *st) {	
+	unsigned long rb;
+	
+	unsigned long timer_info;
+	
+	
+	rb = TIMER_RB_CMD | TIMER_RB_COUNT_ | TIMER_RB_STATUS_ | TIMER_RB_SEL(timer);
+	
+	
+	if (sys_outb(TIMER_CTRL,rb) == OK) {
+		
+		if (sys_inb(TIMER_0 + timer, &timer_info) == OK) {
+	
+			*st = timer_info;
+		
+	
+			return 0;
+	
+		}
+	
+	}
+	
+	
+	return 1;	
+}
+
+
 int timer_set_square(unsigned long timer, unsigned long freq) {
 	unsigned char cmd;
 	unsigned long new_freq = TIMER_FREQ/freq;

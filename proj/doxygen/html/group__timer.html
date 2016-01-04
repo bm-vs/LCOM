@@ -85,6 +85,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ga8eb3357bc05265afc4bea5bbbb480a53"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__timer.html#ga8eb3357bc05265afc4bea5bbbb480a53">timer_get_conf</a> (unsigned long timer, unsigned char *st)</td></tr>
+<tr class="memdesc:ga8eb3357bc05265afc4bea5bbbb480a53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the input timer configuration via read-back command.  <a href="#ga8eb3357bc05265afc4bea5bbbb480a53">More...</a><br /></td></tr>
+<tr class="separator:ga8eb3357bc05265afc4bea5bbbb480a53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gada4efbb5c88275795526fc45f0814aa3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__timer.html#gada4efbb5c88275795526fc45f0814aa3">timer_set_square</a> (unsigned long timer, unsigned long freq)</td></tr>
 <tr class="memdesc:gada4efbb5c88275795526fc45f0814aa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures a timer to generate a square wave.  <a href="#gada4efbb5c88275795526fc45f0814aa3">More...</a><br /></td></tr>
 <tr class="separator:gada4efbb5c88275795526fc45f0814aa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -98,6 +101,52 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Functions related to the timer. </p>
 <h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="ga8eb3357bc05265afc4bea5bbbb480a53"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int timer_get_conf </td>
+          <td>(</td>
+          <td class="paramtype">unsigned long&#160;</td>
+          <td class="paramname"><em>timer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char *&#160;</td>
+          <td class="paramname"><em>st</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reads the input timer configuration via read-back command. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">timer</td><td>Timer whose config to read (Ranges from 0 to 2) </td></tr>
+    <tr><td class="paramname">st</td><td>Address of memory position to be filled with the timer config </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Return 0 upon success and non-zero otherwise </dd></dl>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__timer_ga8eb3357bc05265afc4bea5bbbb480a53_icgraph.png" border="0" usemap="#group__timer_ga8eb3357bc05265afc4bea5bbbb480a53_icgraph" alt=""/></div>
+<map name="group__timer_ga8eb3357bc05265afc4bea5bbbb480a53_icgraph" id="group__timer_ga8eb3357bc05265afc4bea5bbbb480a53_icgraph">
+<area shape="rect" id="node2" href="group__timer.html#gada4efbb5c88275795526fc45f0814aa3" title="Configures a timer to generate a square wave. " alt="" coords="160,5,283,32"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="gada4efbb5c88275795526fc45f0814aa3"></a>
 <div class="memitem">
 <div class="memproto">
@@ -133,6 +182,16 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Return 0 upon success and non-zero otherwise </dd></dl>
 
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__timer_gada4efbb5c88275795526fc45f0814aa3_cgraph.png" border="0" usemap="#group__timer_gada4efbb5c88275795526fc45f0814aa3_cgraph" alt=""/></div>
+<map name="group__timer_gada4efbb5c88275795526fc45f0814aa3_cgraph" id="group__timer_gada4efbb5c88275795526fc45f0814aa3_cgraph">
+<area shape="rect" id="node2" href="group__timer.html#ga8eb3357bc05265afc4bea5bbbb480a53" title="Reads the input timer configuration via read&#45;back command. " alt="" coords="176,5,283,32"/>
+</map>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="ga4c5d9f47323eda494cfd826f6d62eec9"></a>
@@ -156,7 +215,11 @@ Functions</h2></td></tr>
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="group__timer_ga4c5d9f47323eda494cfd826f6d62eec9_icgraph.png" border="0" usemap="#group__timer_ga4c5d9f47323eda494cfd826f6d62eec9_icgraph" alt=""/></div>
-<!-- MAP 0 -->
+<map name="group__timer_ga4c5d9f47323eda494cfd826f6d62eec9_icgraph" id="group__timer_ga4c5d9f47323eda494cfd826f6d62eec9_icgraph">
+<area shape="rect" id="node2" href="group__game.html#ga860a3ff149bb616ec2242dc34bb52b51" title="Primary game function. " alt="" coords="206,5,261,32"/>
+<area shape="rect" id="node3" href="group__game.html#ga792d3a7c31488479811f72b787f85e4d" title="Function for displaying the menu. " alt="" coords="206,56,261,83"/>
+<area shape="rect" id="node4" href="group__game.html#ga8273bb9d5ec414429bd897d7c95a1303" title="Function for displaying the winner of the game. " alt="" coords="188,107,279,133"/>
+</map>
 </div>
 </p>
 
